@@ -5,20 +5,18 @@
 	<title>LAFONAT</title>
 	<meta name="viewport" content="width=device-width">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> 
-	<link rel="stylesheet" href="css/reset.css" type="text/css">
-	<link rel="stylesheet" href="css/common.css" type="text/css">
-	<link rel="stylesheet" href="css/index.css" type="text/css">
-	<style type="text/css">
-	
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
 
-	</style>
 	<!-- [if lt IE9]
 		<script src="js/html5shiv.js"></script>
 	<![endif]-->
 	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/index.js"></script>
 
 
 </head>
@@ -31,7 +29,7 @@
 		<button id="btn_menu" class="btn_menu"><span class="blind">menu</span></button>
 
 		<nav class="clearfix">
-			<ul class="clearfix">
+			<ul class="clearfix menu">
 				<li class="clearfix active">
 					<button class="btn_sub"><span>ABOUT US</span></button>
 					<ul class="openclose">
@@ -39,8 +37,7 @@
 						<li><a href="#">Location</a></li>
 						<li><a href="#">Social</a></li>
 					</ul>
-				</li><!------
-			---><li class="clearfix">
+				</li><!---------><li class="clearfix">
 					<button class="btn_sub"><span>ROOMS</span></button>
 					<ul class="openclose">
 						<li><a href="#">Single</a></li>
@@ -48,39 +45,34 @@
 						<li><a href="#">Double</a></li>
 						<li><a href="#">Suite</a></li>
 					</ul>
-				</li><!------
-			---><li class="clearfix">
+				</li><!---------><li class="clearfix">
 					<button class="btn_sub"><span>DINING</span></button>
 					<ul class="openclose">
 						<li><a href="#">Buffet</a></li>
 						<li><a href="#">Cafe</a></li>
 						<li><a href="#">Bar</a></li>
 					</ul>
-				</li><!------
-			---><li class="clearfix">
+				</li><!---------><li class="clearfix">
 					<button class="btn_sub"><span>ACTIVITIES</span></button>
 					<ul class="openclose">
 						<li><a href="#">Hiking</a></li>
 						<li><a href="#">Meditation</a></li>
 						<li><a href="#">Yoga</a></li>
 					</ul>
-				</li><!------
-			---><li class="clearfix">
+				</li><!---------><li class="clearfix">
 					<button class="btn_sub"><span>FACILITIES</span></button>
 					<ul class="openclose">
 						<li><a href="#">Swimming Pool</a></li>
 						<li><a href="#">Fitness Room</a></li>
 						<li><a href="#">Spa</a></li>
 					</ul>
-				</li><!------
-			---><li class="clearfix">
+				</li><!---------><li class="clearfix">
 					<button class="btn_sub"><span>OFFERS</span></button>
 					<ul class="openclose">
 						<li><a href="#">Packages</a></li>
 						<li><a href="#">Event</a></li>
 					</ul>
-				</li><!------
-			---><li class="clearfix">
+				</li><!---------><li class="clearfix">
 					<button class="btn_sub"><span>CONTACT</span></button>
 					<ul class="openclose">
 						<li><a href="#">Notice</a></li>
@@ -91,9 +83,7 @@
 				</li>
 			</ul>
 			<div class="utility">
-				<a href="#"><span class="blind">facebook</span></a><!----
-				--><a href="#"><span class="blind">instagram</span></a><!----
-				--><a href="#"><span class="blind">youtube</span></a>
+				<a href="#"><span class="blind">facebook</span></a><!------><a href="#"><span class="blind">instagram</span></a><!------><a href="#"><span class="blind">youtube</span></a>
 			</div>
 		</nav>
 	</header>
@@ -174,10 +164,7 @@
 			<div class="content_wrap view_mask">
 				<div class="tabs_wrap">
 					<div class="rel">
-						<button><span>SINGLE</span></button><!---
-					---><button><span>TWIN</span></button><!--
-					---><button><span>DOUBLE</span></button><!--
-					---><button><span>SUITE</span></button>
+						<button><span>SINGLE</span></button><!------><button><span>TWIN</span></button><!-----><button><span>DOUBLE</span></button><!-----><button><span>SUITE</span></button>
 						<span class="bar"><span class="blind">bottom bar</span></span>
 					</div>
 				</div>
@@ -378,7 +365,7 @@
 			</div>
 		</div>
 
-		<div class="inner_wrap content_wrap">
+		<div class="inner_wrap content_wrap sns">
 			<p class="pre_title">SHARE YOUR MOMENT</p>
 			<h2>#LAFONAT</h2>
 			<div class="view_mask">
@@ -388,7 +375,7 @@
 							<img class="sns_bg" src="images/img_index_sns_01.jpg" alt="woman swimming in the pool"/>
 							<img class="ico_sns" src="images/icon_index_sns_01.png" alt="facebook icon"/>
 							<div class="info">
-								<img class="profile" src="images/img_index_sns_profile_01.jpg" alt="woman swimming in the pool"/>
+								<img class="profile" src="images/img_index_sns_profile_01.jpg" alt="pool view profile"/>
 								<p class="user">@ellora.lala</p>
 								<p class="comment">Back in my happy place!</p>
 								<p class="hashs">#LAFONAT #greenlife #enjoy</p>
@@ -450,7 +437,7 @@
 							<div class="info">
 								<img class="profile" src="images/img_index_sns_profile_06.jpg" alt="man looking far away"/>
 								<p class="user">@hey_beloved</p>
-								<p class="comment">Lovely place and location!</ p>
+								<p class="comment">Lovely place and location!</p>
 								<p class="hashs">#LAFONAT #great #view</p>
 							</div>
 						</a>
@@ -458,8 +445,7 @@
 				</ul>
 			</div>
 			<div class="pagination">
-				<button class="dir_btns prev" title="prev button"><span>PREV</span></button><!--
-				--><button class="dir_btns next" title="next button"><span>NEXT</span></button>
+				<button class="dir_btns prev" title="prev button"><span>PREV</span></button><!-----><button class="dir_btns next" title="next button"><span>NEXT</span></button>
 			</div>
 		</div>
 	</section>
@@ -480,8 +466,8 @@
 			<div class="info_wraps">
 				<p class="title">INFO</p>
 				<ul>
-					<li><span>Business registration number: 189-85-00123</span></p></li>
-					<li><span>Name of representative: Pengsu Lee</span></p></li>
+					<li><span>Business registration number: 189-85-00123</span></li>
+					<li><span>Name of representative: Pengsu Lee</span></li>
 				</ul>
 			</div>
 			<div class="info_wraps">
@@ -498,9 +484,7 @@
 				</ul>
 			</div>
 			<div class="utility">
-				<a href="#"><span class="blind">facebook</span></a><!----
-				--><a href="#"><span class="blind">instagram</span></a><!----
-				--><a href="#"><span class="blind">youtube</span></a>
+				<a href="#"><span class="blind">facebook</span></a><!------><a href="#"><span class="blind">instagram</span></a><!------><a href="#"><span class="blind">youtube</span></a>
 			</div>
 		</div>
 		<div class="copy_wrap">
