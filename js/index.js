@@ -1,55 +1,4 @@
 
-/*
-$(function(){
-	var tabAnchor = $('.rel button span'),
-		tabPanel = $('.lists_wrap li');
-	
-	//버튼을 클릭하면 할일
-	tabAnchor.click(function(){
-
-		tabAnchor.removeClass('tab-active'); //모두 빼고
-		$(this).addClass('tab-active'); //그 요소만 추가
-
-		tabPanel.hide();
-
-		//그 요소에만 active를 추가하고 나머지 요소에는 빼는 방법
-		$(this).addClass('tab-active').siblings().removeClass(tab-active);
-
-		var target = $(this).attr('id');
-		console.log(target);
-
-		$(target).show();
-
-
-	});
-
-}); 
-
-
-
-$(function(){
-	var tabAnchor = $('.rel button'),
-		tabPanel = $('.lists_wrap li');
-	
-	//버튼을 클릭하면 할일
-	tabAnchor.click(function(){
-
-//		tabAnchor.find('span').removeClass('tab-active'); //모두 빼고
-//		$(this).find('span').addClass('tab-active'); //그 요소만 추가
-		$(this).find('span').addClass('tab-active');
-		$(this).siblings().find('span').removeClass('tab-active');
-
-		tabPanel.hide();
-
-
-		var targetIdx = $(this).index();
-		console.log(targetIdx);
-		tabPanel.eq(targetIdx).show();
-
-	});
-
-});
-*/
 
 $(document).ready(function(){
 
@@ -67,19 +16,11 @@ $(document).ready(function(){
 				});
 			});
 			function showContent(num){
-
 				var windowWidth = $( window ).width();
-				if(windowWidth <= 768){
 					tabContent.forEach(function(item){
 					item.style.display = 'none';
 					});
 					tabContent[num].style.display = 'block';
-				} else {
-					tabContent.forEach(function(item){
-					item.style.display = 'block';
-					});
-				}
-
 			}
 			function moveHighLight(num){
 				const newLeft = tabMenu[num].offsetLeft;
@@ -91,4 +32,82 @@ $(document).ready(function(){
 
 		
 });
+
+$(document).ready(function(){
+
+	function rolling_slides(_targetWrap){
+
+		const $wrap = _targetWrap;		
+		const $mask = $($wrap + " div.view_mask");
+		let $inner_ul = $($wrap +" div.view_mask > ul");
+		let $inner_ul_li = $($wrap +" div.view_mask > ul > li");
+		const $btn_prev = $($wrap +" button.prev");
+		const $btn_next = $($wrap +" button.next");
+		
+		const li_width = $inner_ul_li.outerWidth();
+		const move_cnt = 1;
+		const duration = 300;
+		let click_Event = true;
+		let si_01 = 0;
+
+		(function init(){
+			for(var i = 1; i<= move_cnt; i++){
+				$inner_ul_li.last().prependTo($inner_ul);
+			}
+			$inner_ul.css("margin-left", -(li_width * move_cnt) + "px");
+		})();
+
+		$btn_prev.click(function(){
+			if(click_Event){
+				click_Event = false;
+				movement(1);
+			}
+			else { return };
+		});
+
+		$btn_next.click(function(){
+			if(click_Event){
+				click_Event = false;
+				movement(-1);
+			}
+			else { return };
+		});
+		
+		function movement(_direction){
+			stop_si();
+			$inner_ul.animate({ left: (li_width * _direction) * move_cnt + "px"}, duration, function(){
+				for(var i = 1; i <= move_cnt; i++){
+					$inner_ul_li = $($wrap + " div.view_mask > ul > li");
+					if(_direction == 1){
+						$inner_ul_li.last().prependTo($inner_ul);
+					}
+					else if(_direction == -1){
+						$inner_ul_li.first().appendTo($inner_ul);
+					}
+				}
+				$inner_ul.css("left", "0px");
+				click_Event = true;
+				start_si();
+			});
+		}
+
+		function start_si(){
+			if(si_01 != 0){
+				clearInterval(si_01);
+			}
+			si_01 = setInterval(function(){$btn_next.click()}, 3000);
+		}
+		function stop_si(){
+			if(si_01 != 0) clearInterval(si_01);
+			si_01 = 0;
+		}
+		start_si();
+
+	}
+
+	let rolling_01 = rolling_slides(".sns");
+
+
+	});
+
 
