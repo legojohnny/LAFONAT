@@ -219,7 +219,7 @@ p.desc { font-size: 0.8125em; }
 
 	section.rooms div.rel { position: relative; width: 100%; border-bottom: 1px solid #ebe6d5; } 
 	section.rooms div.rel::after { content:""; display: block; width: 200%; height: 1px; background: #ebe6d5; transform: translate(-5.25em, 1px); }
-	section.rooms div.tabs_wrap span.bar { position: absolute; left: 0; bottom: -1px; z-index:3; width: 25%; height: 4px; background: #40311e; transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1); }
+	section.rooms div.tabs_wrap span.bar { position: absolute; left: 0; bottom: -1px; z-index:3; width: 21.875vw; height: 4px; background: #40311e; transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1); }
 
 	section.rooms ul { position: relative; margin-top: 20px; width: 100%; height: 50.5281vh; }
 	section.rooms ul > li { display: none; position: absolute; width: 100%; height: 100%; }
@@ -293,13 +293,8 @@ p.desc { font-size: 0.8125em; }
 	section.activities div.info_wrap { width: 100%; }
 	section.activities div.content_wrap { display: inline-block; overflow: hidden; margin-top: 30px; width: 100%; height: 100%; }
 
-<<<<<<< HEAD
-	section.activities ul { overflow: hidden; width: 100%; height: 27rem; }
-	section.activities ul > li { overflow: hidden; width: 100%; height: 10rem; }
-=======
-	section.activities ul { overflow: hidden; width: 100%; height: 31rem; }
+	section.activities ul { overflow: hidden; width: 100%; height: 85vh; }
 	section.activities ul > li { overflow: hidden; width: 100%; }
->>>>>>> d65b6bdf4bef9c48a996877ac1bc930d18e0af8f
 	section.activities ul > li:nth-child(2) { transform: translateY(-15%); }
 	section.activities ul > li:nth-child(3) { transform: translateY(-30%); }
 	section.activities ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
@@ -699,7 +694,7 @@ h2 { font-size: 2em; }
 
 	section.rooms div.rel { position: relative; width: 100%; border-bottom: 1px solid #ebe6d5; } 
 	section.rooms div.rel::after { content:""; display: block; width: 200%; height: 1px; background: #ebe6d5; transform: translate(-5.25em, 1px); }
-	section.rooms div.tabs_wrap span.bar { position: absolute; left: 0; bottom: -1px; z-index:3; width: 25%; height: 4px; background: #40311e; transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1); }
+	section.rooms div.tabs_wrap span.bar { position: absolute; left: 0; bottom: -1px; z-index:3; width: 19.53125vw; height: 4px; background: #40311e; transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1); }
 
 	section.rooms ul { position: relative; margin-top: 30px; width: 100%; height: 60.1562vh; }
 	section.rooms ul > li { display: none; position: absolute; width: 100%; height: 100%; }
