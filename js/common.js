@@ -22,17 +22,20 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     isMobile = true;
 }
 
+
 	if(!isMobile){
 	
-		$('.openclose').show();
 
 	} else {
 	
 		if(screen.width >= 768){
-			$('.openclose').show();
+			
 		}
 		else{
-			$('.openclose').hide();
+
+		$
+
+/*			$('.openclose').hide();
 
 			$('.btn_sub').click(function(){
 
@@ -44,6 +47,6 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 		}
 
 	}
-		
+*/		
 
 	});
