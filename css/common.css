@@ -221,9 +221,7 @@ p.desc { margin: 25px 0; font-size: 1em; line-height: 1.5; }
 	header nav > ul > li > ul > li > a { display: block; padding: 0.7em 0; color: white; font-size: 0.83333vw; }
 	header nav > ul > li > ul > li:first-child > a { display: block; padding-top: 0.3154vh; padding-bottom: 0.7em; color: white; font-size: 0.83333vw; }
 	header nav > ul > li:hover > button { color: #E6CE6C; font-style: italic; text-decoration: underline; }
-	header nav > ul > li.active > button { color: #E6CE6C; font-style: italic; text-decoration: underline; }
 	header nav > ul > li > ul > li:hover > a { color: #E6CE6C; font-weight: bold; font-style: italic; }
-	header nav > ul > li > ul > li.active > a { color: #E6CE6C; font-weight: bold; font-style: italic; }
 
 	header div.utility { text-align: center; margin-top: 10px; padding-right: 6.5vw; }
 	header div.utility > a { display: inline-block; width: 32px; height: 32px; margin-right: 20px; background: url("../images/icon_common_sns.png") no-repeat; background-size: cover; }
