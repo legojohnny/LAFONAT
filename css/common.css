@@ -67,9 +67,9 @@ p.desc { margin: 25px 0; font-size: 1em; line-height: 1.5; }
 	header nav > ul > li > button.btn_sub.active::after { transform: translateY(-50%) rotate(180deg); color: #E6CE6C; }
 	header nav > ul > li > button.btn_sub > span { display: block; width: 100%; height: 2.5em; padding: 0.1em 0; }
 	header nav > ul > li > button.btn_sub.active > span { color: #E6CE6C; font-style: italic; text-decoration: underline; }
-	header nav > ul > li > ul { padding: 0 0 0 1.25em; }
-	header nav > ul > li > button.btn_sub.active + ul { display: block; }
+	header nav > ul > li > ul.openclose { display: none; padding: 0 0 0 1.25em; }
 	header nav > ul > li > ul > li > a { display: block; height: 2em; color: white; font-size: 1em; line-height: 2;}
+	header nav > ul > li.active > ul.openclose { display: block; }
 
 	header div.utility { text-align: center; }
 	header div.utility > a { display: inline-block; width: 32px; height: 32px; margin-right: 10px; background: url("../images/icon_common_sns.png") no-repeat; }

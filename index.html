@@ -17,7 +17,20 @@
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/index.js"></script>
+	<script>
+	window.onload = function(){
 
+		var elm_header = document.getElementsByTagName("header")[0];
+		var btn_menu = document.getElementById("btn_menu");
+
+		btn_menu.onclick = function(){
+			elm_header.classList.toggle("on"); 
+			$('body').toggleClass("hidden");
+
+		}
+
+	}
+	</script>
 
 </head>
 	
@@ -30,7 +43,7 @@
 
 		<nav class="clearfix">
 			<ul class="clearfix menu">
-				<li class="clearfix active">
+				<li class="clearfix">
 					<button class="btn_sub"><span>ABOUT US</span></button>
 					<ul class="openclose">
 						<li class="active"><a href="#">Brand Story</a></li>
