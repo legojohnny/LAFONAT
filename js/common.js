@@ -36,40 +36,37 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 	if(!isMobile){
 	
 
+	} 
 
-
-	} else {
+	else {
 	
 		if(screen.width >= 768){
 
-
 		}
+
 		else{
 
+			var clickLists = document.querySelectorAll('nav > ul > li');
+			/*
+			clickButton을 클릭하면
+			모든 querySelectorAll의 active를 제거하고
+			클릭한 그 clickButton에만 active 추가한다.
+			*/
+			console.log(clickLists);
 
-	var clickLists = document.querySelectorAll('nav > ul > li');
-	/*
-	clickButton을 클릭하면
-	모든 querySelectorAll의 active를 제거하고
-	클릭한 그 clickButton에만 active 추가한다.
-	*/
-	console.log(clickLists);
+			for(var i = 0; i < clickLists.length; i++){
+			
+				clickLists[i].addEventListener('click', function(){
+					for(var x = 0; x < clickLists.length; x++){
+						clickLists[x].classList.remove('active');
+					}
+					this.classList.add('active');
+				});
 
-	for(var i = 0; i < clickLists.length; i++){
-	
-		clickLists[i].addEventListener('click', function(){
-			for(var x = 0; x < clickLists.length; x++){
-				clickLists[x].classList.remove('active');
 			}
-			this.classList.add('active');
-		});
-	
-	}
-
 
 		}
 
 	}
-		
 
-	});
+});

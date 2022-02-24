@@ -63,13 +63,21 @@ p.desc { margin: 25px 0; font-size: 1em; line-height: 1.5; }
 	header.on nav { transform: translateX(-100%); }
 	header nav > ul { overflow-y: hidden; height: 90%; padding: 0 9.9375vw; }
 	header nav > ul > li > button.btn_sub { display: block; position: relative; width: 100%; height: 2.5em; font-size: 1.125em; font-weight: bold; color: white; line-height: 2.5; }
-	header nav > ul > li > button.btn_sub::after { content: "▼"; position: absolute; right: 0; top: 50%; font-size: 1em; transform: translateY(-50%) scaleY(0.6); color: #fff; }
-	header nav > ul > li > button.btn_sub.active::after { transform: translateY(-50%) rotate(180deg); color: #E6CE6C; }
+	header nav > ul > li > button.btn_sub::after { content: "▼"; position: absolute; right: 0; top: 50%; font-size: 1em; transform: translateY(-50%) scaleY(0.6); color: #fff; transition: all 0.5s;}
 	header nav > ul > li > button.btn_sub > span { display: block; width: 100%; height: 2.5em; padding: 0.1em 0; }
-	header nav > ul > li > button.btn_sub.active > span { color: #E6CE6C; font-style: italic; text-decoration: underline; }
-	header nav > ul > li > ul.openclose { display: none; padding: 0 0 0 1.25em; }
-	header nav > ul > li > ul > li > a { display: block; height: 2em; color: white; font-size: 1em; line-height: 2;}
-	header nav > ul > li.active > ul.openclose { display: block; }
+
+	header nav > ul > li > ul { overflow: hidden; padding: 0 0 0 1.25em; height: 0; transition: all 0.5s; }
+	header nav > ul > li > ul > li > a { display: block;  width:100%; height: 2em; color: white; font-size: 1em; line-height: 2;}
+	header nav > ul > li:nth-child(1)[class ~= "active"] > ul { display: block; height: 96px; }
+	header nav > ul > li:nth-child(2)[class ~= "active"] > ul { display: block; height: 128px; }
+	header nav > ul > li:nth-child(3)[class ~= "active"] > ul { display: block; height: 96px; }
+	header nav > ul > li:nth-child(4)[class ~= "active"] > ul { display: block; height: 96px; }
+	header nav > ul > li:nth-child(5)[class ~= "active"] > ul { display: block; height: 96px; }
+	header nav > ul > li:nth-child(6)[class ~= "active"] > ul { display: block; height: 64px; }
+	header nav > ul > li:nth-child(7)[class ~= "active"] > ul { display: block; height: 128px; }
+
+	header nav > ul > li.active > button.btn_sub::after { transform: translateY(-50%) rotate(180deg) scaleY(0.6); color: #E6CE6C; }
+	header nav > ul > li.active > button.btn_sub > span { color: #E6CE6C; font-style: italic; text-decoration: underline; }
 
 	header div.utility { text-align: center; }
 	header div.utility > a { display: inline-block; width: 32px; height: 32px; margin-right: 10px; background: url("../images/icon_common_sns.png") no-repeat; }
@@ -138,7 +146,7 @@ p.desc { margin: 25px 0; font-size: 1em; line-height: 1.5; }
 	header nav { display: block; position: fixed; left: 100%; top: 0; z-index: 105; width: 100vw; height: 100vh; padding: 15vh 1.8645vw 0 7.8645vw; background: #40311e; transform: translateX(0); transition: transform 0.2s ease-in-out; }
 	header.on nav { transform: translateX(-100%); }
 	header nav > ul { text-align: center; }
-	header nav > ul > li { float: left; width: 50%; height: 12.5em; padding: 0 1.5em; text-align: left; }
+	header nav > ul > li { float: left; width: 50%; height: 11.5em; padding: 0 1.5em; text-align: left; }
 	header nav > ul > li > button.btn_sub { float: left; width: 50%; color: white; font-size: 1.25em; font-weight: bold; }
 	header nav > ul > li > ul { float: left; width: 50%; padding: 0 0 0.875em 0.25em; }
 	header nav > ul > li > ul > li { width: 100%; }
