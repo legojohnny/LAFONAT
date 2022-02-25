@@ -1,7 +1,11 @@
-# Personal-project-LAFONAT
+# Personal-project
 
-Personal-project-LAFONAT
+Making Responsive Web for fictional hotel company
 
-HTML, CSS, JavaScript
+My part of the project:
 
-Main
+  * Making fictional company *
+
+  * Making responsive web *
+    Main index page
+    using HTML, CSS, JavaScript
