@@ -3,468 +3,1005 @@
 
 @charset "utf-8";
 
-
 /* ====== mobile(start) =======*/
 @media screen and (max-width: 767px) {
-
-
-
-h2 { font-size: 1.25em; }
-
-p { font-size: 0.8125em; }
-
-p.title_h2_pre { font-size: 0.75em; }
-
-p.title { font-size: 0.875em; }
-
-p.desc { font-size: 0.8125em; }
-
-.view_more { padding: 0.4375em 1.875em; font-size: 0.6875em; }
-
-	/*좌우 margin 기준: 20px (6.25vw), gutter : 35px */
-
-	/* +++ section.visual +++*/
-	section.visual { overflow: hidden; clear: both; position: relative; width: 100%; height: 100vh; }
-	section.visual > video { width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-	section.visual > div.slogans { position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto; z-index: 2; height: 7em; font-weight: bold; }
-	section.visual > div.slogans > p.slogan_left { color: rgba(255, 255, 255, 0.7); transform: translateX(-10%); animation-name: ani_slogan_left; animation-duration: 6s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; font-size: 2em; line-height: 1.5em; }
-	section.visual > div.slogans > p.slogan_right { color: #fff; transform: translateX(10%); animation-name: ani_slogan_right; animation-duration: 6s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; font-size: 2em; line-height: 1.5em; }
-
-	@keyframes ani_slogan_left {
-
-		0% {
-			opacity: 0;
-		}
-		60% {
-			opacity: 1;
-		}
-		100% {
-			transform: translateX(0%);
-		}
-	}
-
-	@keyframes ani_slogan_right {
-
-		0% {
-			opacity: 0;
-		}
-		60% {
-			opacity: 1;
-		}
-		100% {
-			transform: translateX(0%);
-		}
-	}
-
-	section.visual > span.ico_scr { display: inline-block; position: absolute; left: 47%; bottom: 3em; width: 2em; height: 2em; margin-top: 0.2em; border-left: 0.2em solid #fff; border-bottom: 0.2em solid #fff; transform: translateX(-50%) rotate(-45deg); animation-name: ani_scroll; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: ease-in; }
-	span.ico_scr > span.inner_bar { display: none; }
-
-	@keyframes ani_scroll { 
-
-		0% {
-			transform: rotate(-45deg) translate(0, 0);
-			opacity: 0;
-		}
-		50% {
-			opacity: 1;
-		}
-		100% {
-			transform: rotate(-45deg) translate(-20px, 20px);
-			opacity: 0;
-		}
-
-	}
-
-
-
-	/* +++ section.promo +++*/
-	/* ++ bg ++*/
-	section.promo div.bg { overflow: hidden; }
-	section.promo div.bg div.bg_01 div { position: absolute; left: 0; top: 0; width: 30%; }
-	section.promo div.bg div.bg_01 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.promo div.bg div.bg_01 div.dep_01 { animation-name: ani_bg_01; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_01 { 
-
-		0% {
-			transform-origin: left top; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: left top; 
-		}
-		100% {
-			transform-origin: left top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_01 div.dep_02 { animation-name: ani_bg_02; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_02 { 
-
-		0% {
-			transform-origin: left top; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: left top; 
-		}
-		100% {
-			transform-origin: left top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_02 div { position: absolute; right: 0; top: 0; width: 30%; }
-	section.promo div.bg div.bg_02 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.promo div.bg div.bg_02 div.dep_01 { animation-name: ani_bg_03; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_03 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(-10deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_02 div.dep_02 { animation-name: ani_bg_04; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_04 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(8deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.promo div.content_wrap { margin-top: 70px; padding: 0 6.25vw; }
-
-	section.promo hr.short { width: 50px; height: 2px; margin: 20px auto 0; background: #40311e; }
-
-	section.promo div.content_wrap p.lead { margin-top: 20px; }
-
-	section.promo div.view_mask { margin-top: 20px; }
-
-	section.promo ul li { float: left; width: 33.3333%; }
-	section.promo ul li img { display: inline-block; width: 45px; height: 45px; object-fit: cover; }
-	section.promo ul li p { display: none; }
-
-
-
-	/* +++ section.rooms +++*/
-	/* ++ bg ++*/
-	section.rooms div.bg { overflow: hidden; }
-	section.rooms div.bg div.bg_03 div { position: absolute; left: 0; bottom: 0; width: 30%; }
-	section.rooms div.bg div.bg_03 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.rooms div.bg div.bg_03 div.dep_01 { animation-name: ani_bg_05; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_05 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	section.rooms div.bg div.bg_03 div.dep_02 { animation-name: ani_bg_06; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_06 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.rooms { margin-top: 70px; padding-bottom: 70px; }
-	section.rooms div.content_wrap { margin-top: 30px; padding: 0 6.25vw; }
-	section.rooms div.view_mask { position: relative; }
-
-	section.rooms div.tabs_wrap button { display: inline-block; width: 25%; padding: 0 0.6em 0.7em 0.6em; }
-	section.rooms div.tabs_wrap div.rel button span { display: block; width: 100%; font-size: 0.875em; color: #40311e; text-align: center; }
-	section.rooms div.tabs_wrap div.rel button span.tab-active { font-weight: bold; }
-
-	section.rooms div.rel { position: relative; width: 100%; border-bottom: 1px solid #ebe6d5; } 
-	section.rooms div.rel::after { content:""; display: block; width: 200%; height: 1px; background: #ebe6d5; transform: translate(-5.25em, 1px); }
-	section.rooms div.tabs_wrap span.bar { position: absolute; left: 0; bottom: -1px; z-index:3; width: 21.875vw; height: 4px; background: #40311e; transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1); }
-
-	section.rooms ul { position: relative; margin-top: 20px; width: 100%; height: 50.5281vh; }
-	section.rooms ul > li { display: none; position: absolute; width: 100%; height: 100%; }
-	section.rooms ul > li:nth-child(1) { display: block; }
-	section.rooms ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.rooms ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.rooms ul > li > a::after { content:""; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 60%; background: linear-gradient(to top, #40311e, transparent); }
-
-	section.rooms div.info { position: absolute; left: 0; bottom: 0; padding-bottom: 25px; width: 100%; color: #fff; }
-	section.rooms div.info p.title { margin-bottom: 20px; font-size: 1.25em; font-weight: bold; }
-	section.rooms div.info p.desc { display: none; }
-	section.rooms .view_more { background: transparent; border: 2px solid #fff; font-weight: bold; color: #fff; }
-
-
-
-	/* +++ section.dining +++*/
-	/* ++ content ++*/
-	section.dining { height: 31rem; position: relative; }
-
-	section.dining div.img_wrap { overflow: hidden; width: 100%; height: 60%; }
-	section.dining div.img_wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.dining div.info_wrap { position: absolute; left: 50%; top: 45%; width: 90%; min-width: 356px; height: auto; background: #a69e8f; transform: translateX(-50%); padding: 3vh;  }
-
-	section.dining div.info { width: 100%; height: 100%; }
-
-
-
-	/* +++ section.activities +++*/
-	/* ++ bg ++*/
-	section.activities div.bg { overflow: hidden; }
-	section.activities div.bg div.bg_04 div { position: absolute; right: 0; top: 0; width: 30%; }
-	section.activities div.bg div.bg_04 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.activities div.bg div.bg_04 div.dep_01 { animation-name: ani_bg_07; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_07 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	section.activities div.bg div.bg_04 div.dep_02 { animation-name: ani_bg_08; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_08 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.activities div.inner_wrap { margin-top: 70px; }
-	section.activities div.info_wrap { width: 100%; }
-	section.activities div.content_wrap { overflow: hidden; margin-top: 30px; width: 100%; height: 100%; }
-
-	section.activities ul > li { position: relative; overflow: hidden; width: 100%; }
-	section.activities ul > li:nth-of-type(2) { transform: translateY(-15%); }
-	section.activities ul > li:nth-of-type(3) { transform: translateY(-30%); }
-	section.activities ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.activities ul > li > a > picture { overflow: hidden; display: block; position: relative; width: 100%; height: 28.3450vh; }
-	section.activities ul > li > a > picture.act_01 { clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%); }
-	section.activities ul > li > a > picture.act_02 { clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%); }
-	section.activities ul > li > a > picture.act_03 { clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%); }
-	section.activities ul > li > a > picture::before { content: ""; display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); }
-	section.activities ul > li > a > picture > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.activities ul > li > a > div.info { position: absolute; z-index: 2; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-	section.activities ul > li > a > div.info > p.title { margin-bottom: 0; font-size: 1.25em; color: #fff; font-weight: bold; line-height: 1.5; }
-	section.activities ul > li > a > div.info > p.click { color: #fff; line-height: 1.5; }
-
-
-
-	/* +++ section.facilities +++*/
-	/* ++ content ++*/
-	section.facilities { margin-top: 40px; }
-
-	section.facilities div.info{ display: block; width: 100%; height: 100%; padding: 0 6.25vw; }
-
-	section.facilities div.img_wrap { overflow: hidden; position: relative; width: 100%; height: 197px; margin-top: 30px; }
-	section.facilities div.img_wrap img.slides { display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
-	section.facilities div.img_wrap img.prev { opacity: 1; z-index: 5; animation:fade 10s infinite; }
-	section.facilities div.img_wrap img.cur { opacity: 1; z-index: 10; animation:fade2 10s infinite; }
-	section.facilities div.img_wrap img.next { opacity: 1; z-index: 4; animation:fade3 10s infinite; }
-
-	@keyframes fade
-	{
-	  0%   {opacity:1}
-	  33.333% { opacity: 0}
-	  66.666% { opacity: 0}
-	  100% { opacity: 1}
-	}
-	@keyframes fade2
-	{
-	  0%   {opacity:0}
-	  33.333% { opacity: 1}
-	  66.666% { opacity: 0 }
-	  100% { opacity: 0}
-	}
-	@keyframes fade3
-	{
-	  0%   {opacity:0}
-	  33.333% { opacity: 0}
-	  66.666% { opacity: 1}
-	  100% { opacity: 0}
-	}
-
-	/* +++ section.event +++*/
-	/* ++ bg ++*/
-	section.event div.bg { overflow: hidden; transform: translate(-4vw, 2vh); }
-	section.event div.bg div.bg_05 div { position: absolute; left: 0; top: 0; width: 30%; }
-	section.event div.bg div.bg_05 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.event div.bg div.bg_05 div.dep_01 { animation-name: ani_bg_09; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_09 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	section.event div.bg div.bg_05 div.dep_02 { animation-name: ani_bg_10; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_10 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.event div.content_wrap { margin-top: 70px; }
-	section.event div.view_mask { position: relative; margin-top: 30px; text-align: left; }
-
-	section.event ul > li { position: relative; display: block; margin: 0 6.25vw 1.9531vh 6.25vw; height: 17.6058vh; }
-	section.event ul > li > a { display: inline-block; width: 52.5%; height: 100%; overflow: hidden; position: relative; }
-	section.event ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.event ul > li > a > img.ico_viewmore { display: none; }
-	section.event ul > li > div.info { float: right; display: inline-block; width: 47.5%; padding-left: 1vh; text-align: right; }
-	section.event ul > li > div.info > p.title { margin: 0 0 20px 0; font-size: 1.25em; font-weight: bold; line-height: 1; }
-	section.event ul > li > div.info > p.desc { display: none; }
-	section.event ul > li > div.info > a.view_more { position: absolute; right: 0; bottom: 0; }
-
-
-
-	/* +++ section.social +++*/
-	/* ++ bg ++*/
-	section.social div.bg { overflow: hidden; }
-	section.social div.bg div.bg_06 div { position: absolute; left: 0; bottom: 0; width: 30%; }
-	section.social div.bg div.bg_06 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.social div.bg div.bg_06 div.dep_01 { animation-name: ani_bg_11; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_11 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	section.social div.bg div.bg_07 div { position: absolute; right: 0; bottom: 0; width: 30%; }
-	section.social div.bg div.bg_07 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.social div.bg div.bg_07 div.dep_01 { animation-name: ani_bg_12; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_12 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(-10deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.social div.content_wrap { overflow: hidden; margin-top: 60px; padding-bottom: 70px; }
-	section.social div.view_mask { overflow: hidden; position: relative; width: 100%; margin-top: 30px; }
-
-	section.social ul { width: 600%; }
-	section.social ul > li { float: left; position: relative; width: 16.6666%; padding: 0 6.25vw; }
-	section.social ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.social ul > li > a > img.sns_bg { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.social ul > li > a::before { content: ""; display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.9), transparent); }
-	section.social ul > li > a > img.ico_sns { display: none; }
-	section.social ul > li > a > div.info { position: absolute; right: 10px; top: 10px; width: 100%; z-index: 2; text-align: right; }
-	section.social ul > li > a > div.info > img.profile { overflow: hidden; float: right; width: 54px; height: 54px; border-radius: 50%; }
-	section.social ul > li > a > div.info > p { float: right; margin-right: 10px; color: #fff; }
-	section.social ul > li > a > div.info > p.user { display: inline-block; width: 70%; font-size: 1em; }
-	section.social ul > li > a > div.info > p.comment { display: inline-block; width: 70%; font-size: 1em; }
-	section.social ul > li > a > div.info > p.hashs { display: none; }
-	section.social ul > li > a > div.info > img.ico_sns { position: absolute; right: 10px; top: -57px; z-index: 3; }
-
-	section.social div.pagination { margin-top: 10px; font-size: 0.8125em; }
-
-	hr.long { width: 100%; height: 2px; background: #ebe6d5; }
-
-
-
+  h2 {
+    font-size: 1.25em;
+  }
+
+  p {
+    font-size: 0.8125em;
+  }
+
+  p.title_h2_pre {
+    font-size: 0.75em;
+  }
+
+  p.title {
+    font-size: 0.875em;
+  }
+
+  p.desc {
+    font-size: 0.8125em;
+  }
+
+  .view_more {
+    padding: 0.4375em 1.875em;
+    font-size: 0.6875em;
+  }
+
+  /*좌우 margin 기준: 20px (6.25vw), gutter : 35px */
+
+  /* +++ section.visual +++*/
+  section.visual {
+    overflow: hidden;
+    clear: both;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  section.visual > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  section.visual > div.slogans {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    height: 7em;
+    font-weight: bold;
+  }
+  section.visual > div.slogans > p.slogan_left {
+    color: rgba(255, 255, 255, 0.7);
+    transform: translateX(-10%);
+    animation-name: ani_slogan_left;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+  section.visual > div.slogans > p.slogan_right {
+    color: #fff;
+    transform: translateX(10%);
+    animation-name: ani_slogan_right;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+
+  @keyframes ani_slogan_left {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes ani_slogan_right {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  section.visual > span.ico_scr {
+    display: inline-block;
+    position: absolute;
+    left: 47%;
+    bottom: 3em;
+    width: 2em;
+    height: 2em;
+    margin-top: 0.2em;
+    border-left: 0.2em solid #fff;
+    border-bottom: 0.2em solid #fff;
+    transform: translateX(-50%) rotate(-45deg);
+    animation-name: ani_scroll;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+  span.ico_scr > span.inner_bar {
+    display: none;
+  }
+
+  @keyframes ani_scroll {
+    0% {
+      transform: rotate(-45deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
+
+  /* +++ section.promo +++*/
+  /* ++ bg ++*/
+  section.promo div.bg {
+    overflow: hidden;
+  }
+  section.promo div.bg div.bg_01 div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+  }
+  section.promo div.bg div.bg_01 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.promo div.bg div.bg_01 div.dep_01 {
+    animation-name: ani_bg_01;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_01 {
+    0% {
+      transform-origin: left top;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: left top;
+    }
+    100% {
+      transform-origin: left top;
+    }
+  }
+
+  section.promo div.bg div.bg_01 div.dep_02 {
+    animation-name: ani_bg_02;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_02 {
+    0% {
+      transform-origin: left top;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: left top;
+    }
+    100% {
+      transform-origin: left top;
+    }
+  }
+
+  section.promo div.bg div.bg_02 div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+  }
+  section.promo div.bg div.bg_02 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.promo div.bg div.bg_02 div.dep_01 {
+    animation-name: ani_bg_03;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_03 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(-10deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  section.promo div.bg div.bg_02 div.dep_02 {
+    animation-name: ani_bg_04;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_04 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(8deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  /* ++ content ++*/
+  section.promo div.content_wrap {
+    margin-top: 70px;
+    padding: 0 6.25vw;
+  }
+
+  section.promo hr.short {
+    width: 50px;
+    height: 2px;
+    margin: 20px auto 0;
+    background: #40311e;
+  }
+
+  section.promo div.content_wrap p.lead {
+    margin-top: 20px;
+  }
+
+  section.promo div.view_mask {
+    margin-top: 20px;
+  }
+
+  section.promo ul li {
+    float: left;
+    width: 33.3333%;
+  }
+  section.promo ul li img {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
+  section.promo ul li p {
+    display: none;
+  }
+
+  /* +++ section.rooms +++*/
+  /* ++ bg ++*/
+  section.rooms div.bg {
+    overflow: hidden;
+  }
+  section.rooms div.bg div.bg_03 div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+  }
+  section.rooms div.bg div.bg_03 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.rooms div.bg div.bg_03 div.dep_01 {
+    animation-name: ani_bg_05;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_05 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  section.rooms div.bg div.bg_03 div.dep_02 {
+    animation-name: ani_bg_06;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_06 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.rooms {
+    margin-top: 70px;
+    padding-bottom: 70px;
+  }
+  section.rooms div.content_wrap {
+    margin-top: 30px;
+    padding: 0 6.25vw;
+  }
+  section.rooms div.view_mask {
+    position: relative;
+  }
+  section.rooms div.rel {
+    position: relative;
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid #ebe6d5;
+  }
+  section.rooms div.tabs_wrap button {
+    display: inline-block;
+    width: 25%;
+    padding: 0 0.6em 0.7em 0.6em;
+  }
+  section.rooms div.tabs_wrap div.rel button span {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 0.875em;
+    color: #40311e;
+    text-align: center;
+  }
+  section.rooms div.tabs_wrap div.rel button span.tab-active {
+    font-weight: bold;
+  }
+
+  section.rooms div.tabs_wrap span.bar {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    z-index: 3;
+    width: 21.875vw;
+    height: 4px;
+    background: #40311e;
+    transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  section.rooms ul {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 50.5281vh;
+  }
+  section.rooms ul > li {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  section.rooms ul > li:nth-child(1) {
+    display: block;
+  }
+  section.rooms ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.rooms ul > li > a > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.rooms ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, #40311e, transparent);
+  }
+
+  section.rooms div.info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 25px;
+    width: 100%;
+    color: #fff;
+  }
+  section.rooms div.info p.title {
+    margin-bottom: 20px;
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+  section.rooms div.info p.desc {
+    display: none;
+  }
+  section.rooms .view_more {
+    background: transparent;
+    border: 2px solid #fff;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  /* +++ section.dining +++*/
+  /* ++ content ++*/
+  section.dining {
+    height: 31rem;
+    position: relative;
+  }
+
+  section.dining div.img_wrap {
+    overflow: hidden;
+    width: 100%;
+    height: 60%;
+  }
+  section.dining div.img_wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.dining div.info_wrap {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 90%;
+    min-width: 356px;
+    height: auto;
+    background: #a69e8f;
+    transform: translateX(-50%);
+    padding: 3vh;
+  }
+
+  section.dining div.info {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* +++ section.activities +++*/
+  /* ++ bg ++*/
+  section.activities div.bg {
+    overflow: hidden;
+  }
+  section.activities div.bg div.bg_04 div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+  }
+  section.activities div.bg div.bg_04 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.activities div.bg div.bg_04 div.dep_01 {
+    animation-name: ani_bg_07;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_07 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  section.activities div.bg div.bg_04 div.dep_02 {
+    animation-name: ani_bg_08;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_08 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  /* ++ content ++*/
+  section.activities div.inner_wrap {
+    margin-top: 70px;
+  }
+  section.activities div.info_wrap {
+    width: 100%;
+  }
+  section.activities div.content_wrap {
+    overflow: hidden;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+  }
+
+  section.activities ul > li {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  section.activities ul > li:nth-of-type(2) {
+    transform: translateY(-15%);
+  }
+  section.activities ul > li:nth-of-type(3) {
+    transform: translateY(-30%);
+  }
+  section.activities ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.activities ul > li > a > picture {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 28.345vh;
+  }
+  section.activities ul > li > a > picture.act_01 {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+  section.activities ul > li > a > picture.act_02 {
+    clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+  }
+  section.activities ul > li > a > picture.act_03 {
+    clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  section.activities ul > li > a > picture::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  section.activities ul > li > a > picture > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.activities ul > li > a > div.info {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  section.activities ul > li > a > div.info > p.title {
+    margin-bottom: 0;
+    font-size: 1.25em;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  section.activities ul > li > a > div.info > p.click {
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  /* +++ section.facilities +++*/
+  /* ++ content ++*/
+  section.facilities {
+    margin-top: 40px;
+  }
+
+  section.facilities div.info {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 6.25vw;
+  }
+
+  section.facilities div.img_wrap {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 197px;
+    margin-top: 30px;
+  }
+  section.facilities div.img_wrap img.slides {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+  }
+  section.facilities div.img_wrap img.prev {
+    opacity: 1;
+    z-index: 5;
+    animation: fade 10s infinite;
+  }
+  section.facilities div.img_wrap img.cur {
+    opacity: 1;
+    z-index: 10;
+    animation: fade2 10s infinite;
+  }
+  section.facilities div.img_wrap img.next {
+    opacity: 1;
+    z-index: 4;
+    animation: fade3 10s infinite;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    33.333% {
+      opacity: 0;
+    }
+    66.666% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade2 {
+    0% {
+      opacity: 0;
+    }
+    33.333% {
+      opacity: 1;
+    }
+    66.666% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade3 {
+    0% {
+      opacity: 0;
+    }
+    33.333% {
+      opacity: 0;
+    }
+    66.666% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* +++ section.event +++*/
+  /* ++ bg ++*/
+  section.event div.bg {
+    overflow: hidden;
+    transform: translate(-4vw, 2vh);
+  }
+  section.event div.bg div.bg_05 div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+  }
+  section.event div.bg div.bg_05 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.event div.bg div.bg_05 div.dep_01 {
+    animation-name: ani_bg_09;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_09 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  section.event div.bg div.bg_05 div.dep_02 {
+    animation-name: ani_bg_10;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_10 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.event div.content_wrap {
+    margin-top: 70px;
+  }
+  section.event div.view_mask {
+    position: relative;
+    margin-top: 30px;
+    text-align: left;
+  }
+
+  section.event ul > li {
+    position: relative;
+    display: block;
+    margin: 0 6.25vw 1.9531vh 6.25vw;
+    height: 17.6058vh;
+  }
+  section.event ul > li > a {
+    display: inline-block;
+    width: 52.5%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  section.event ul > li > a > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.event ul > li > a > img.ico_viewmore {
+    display: none;
+  }
+  section.event ul > li > div.info {
+    float: right;
+    display: inline-block;
+    width: 47.5%;
+    padding-left: 1vh;
+    text-align: right;
+  }
+  section.event ul > li > div.info > p.title {
+    margin: 0 0 20px 0;
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 1;
+  }
+  section.event ul > li > div.info > p.desc {
+    display: none;
+  }
+  section.event ul > li > div.info > a.view_more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  /* +++ section.social +++*/
+  /* ++ bg ++*/
+  section.social div.bg {
+    overflow: hidden;
+  }
+  section.social div.bg div.bg_06 div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+  }
+  section.social div.bg div.bg_06 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.social div.bg div.bg_06 div.dep_01 {
+    animation-name: ani_bg_11;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_11 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  section.social div.bg div.bg_07 div {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+  }
+  section.social div.bg div.bg_07 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.social div.bg div.bg_07 div.dep_01 {
+    animation-name: ani_bg_12;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_12 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(-10deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.social div.content_wrap {
+    overflow: hidden;
+    margin-top: 60px;
+    padding-bottom: 70px;
+  }
+  section.social div.view_mask {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  section.social ul {
+    width: 600%;
+  }
+  section.social ul > li {
+    float: left;
+    position: relative;
+    width: 16.6666%;
+    padding: 0 6.25vw;
+  }
+  section.social ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.social ul > li > a > img.sns_bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.social ul > li > a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom left,
+      rgba(0, 0, 0, 0.9),
+      transparent
+    );
+  }
+  section.social ul > li > a > img.ico_sns {
+    display: none;
+  }
+  section.social ul > li > a > div.info {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 100%;
+    z-index: 2;
+    text-align: right;
+  }
+  section.social ul > li > a > div.info > img.profile {
+    overflow: hidden;
+    float: right;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+  }
+  section.social ul > li > a > div.info > p {
+    float: right;
+    margin-right: 10px;
+    color: #fff;
+  }
+  section.social ul > li > a > div.info > p.user {
+    display: inline-block;
+    width: 70%;
+    font-size: 1em;
+  }
+  section.social ul > li > a > div.info > p.comment {
+    display: inline-block;
+    width: 70%;
+    font-size: 1em;
+  }
+  section.social ul > li > a > div.info > p.hashs {
+    display: none;
+  }
+  section.social ul > li > a > div.info > img.ico_sns {
+    position: absolute;
+    right: 10px;
+    top: -57px;
+    z-index: 3;
+  }
+
+  section.social div.pagination {
+    margin-top: 10px;
+    font-size: 0.8125em;
+  }
+
+  hr.long {
+    width: 100%;
+    height: 2px;
+    background: #ebe6d5;
+  }
 }
 /* ====== mobile(end) =======*/
 
@@ -485,444 +1022,973 @@ p.desc { font-size: 0.8125em; }
 
 /* ====== tablet(start) =======*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-
-
-
-h2 { font-size: 2em; }
-
-	/*좌우 margin 기준: 22px (2.8645vw)*/
-
-	/* +++ section.visual +++*/
-	section.visual { overflow: hidden; clear: both; position: relative; width: 100%; height: 100vh; }
-	section.visual > video { width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-	section.visual > div.slogans { position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto;  z-index: 2; height: 2.5em; font-weight: bold; font-size: 5em; }
-	section.visual > div.slogans > p.slogan_left { color: rgba(255, 255, 255, 0.7); transform: translateX(-10%); animation-name: ani_slogan_left; animation-duration: 6s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; line-height: 1.25; }
-	section.visual > div.slogans > p.slogan_right { color: #fff; transform: translateX(10%); animation-name: ani_slogan_right; animation-duration: 6s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; line-height: 1.25; }
-
-	@keyframes ani_slogan_left {
-
-		0% {
-			opacity: 0;
-		}
-		60% {
-			opacity: 1;
-		}
-		100% {
-			transform: translateX(0%);
-		}
-	}
-
-	@keyframes ani_slogan_right {
-
-		0% {
-			opacity: 0;
-		}
-		60% {
-			opacity: 1;
-		}
-		100% {
-			transform: translateX(0%);
-		}
-	}
-
-
-	section.visual > span.ico_scr { display: inline-block; position: absolute; left: 47%; bottom: 4em; width: 3em; height: 3em; margin-top: 0.2em; border-left: 0.3em solid #fff; border-bottom: 0.3em solid #fff; transform: rotate(-45deg); animation-name: ani_scroll; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: ease-in; }
-	span.ico_scr > span.inner_bar { display: none; }
-
-	@keyframes ani_scroll { 
-
-		0% {
-			transform: rotate(-45deg) translate(0, 0);
-			opacity: 0;
-		}
-		50% {
-			opacity: 1;
-		}
-		100% {
-			transform: rotate(-45deg) translate(-20px, 20px);
-			opacity: 0;
-		}
-
-	}
-
-
-
-	/* +++ section.promo +++*/
-	/* ++ bg ++*/
-	section.promo div.bg { overflow: hidden; }
-	section.promo div.bg div.bg_01 div { position: absolute; left: 0; top: 0; width: 30%; }
-	section.promo div.bg div.bg_01 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.promo div.bg div.bg_01 div.dep_01 { animation-name: ani_bg_01; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_01 { 
-
-		0% {
-			transform-origin: left top; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: left top; 
-		}
-		100% {
-			transform-origin: left top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_01 div.dep_02 { animation-name: ani_bg_02; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_02 { 
-
-		0% {
-			transform-origin: left top; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: left top; 
-		}
-		100% {
-			transform-origin: left top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_02 div { position: absolute; right: 0; top: 0; width: 30%; }
-	section.promo div.bg div.bg_02 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.promo div.bg div.bg_02 div.dep_01 { animation-name: ani_bg_03; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_03 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(-10deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_02 div.dep_02 { animation-name: ani_bg_04; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_04 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(8deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.promo div.content_wrap { margin-top: 90px; padding: 0 2.8645vw; }
-
-	section.promo hr.short { width: 80px; height: 2px; margin: 28px auto 0; background: #40311e; }
-
-	section.promo div.content_wrap p.lead { margin-top: 28px; padding: 0 18%; }
-
-	section.promo div.view_mask { margin-top: 40px; }
-
-	section.promo ul li { float: left; width: 33%; padding: 0 1.75vw; }
-	section.promo ul li img { display: inline-block; width: 132px; object-fit: cover; }
-	section.promo ul li p.title { margin-top: 1em; }
-	section.promo ul li p.desc { margin-top: 1em; }
-
-
-
-	/* +++ section.rooms +++*/
-	/* ++ bg ++*/
-	section.rooms div.bg { overflow: hidden; }
-	section.rooms div.bg div.bg_03 div { position: absolute; left: 0; bottom: 0; width: 30%; }
-	section.rooms div.bg div.bg_03 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.rooms div.bg div.bg_03 div.dep_01 { animation-name: ani_bg_05; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_05 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	section.rooms div.bg div.bg_03 div.dep_02 { animation-name: ani_bg_06; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_06 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.rooms { margin-top: 110px; padding-bottom: 110px; }
-
-	section.rooms div.content_wrap { margin-top: 30px; padding: 0 5.25em; }
-
-	section.rooms div.view_mask { position: relative; }
-
-	section.rooms div.tabs_wrap button { display: inline-block; width: 25%; padding: 0 0.6em 0.6em; }
-	section.rooms div.tabs_wrap div.rel button span { display: block; width: 100%; font-size: 1.25em; color: #40311e; text-align: center; }
-	section.rooms div.tabs_wrap div.rel button span.tab-active { font-weight: bold; }
-
-	section.rooms div.rel { position: relative; width: 100%; border-bottom: 1px solid #ebe6d5; } 
-	section.rooms div.rel::after { content:""; display: block; width: 200%; height: 1px; background: #ebe6d5; transform: translate(-5.25em, 1px); }
-	section.rooms div.tabs_wrap span.bar { position: absolute; left: 0; bottom: -1px; z-index:3; width: 19.53125vw; height: 4px; background: #40311e; transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1); }
-
-	section.rooms ul { position: relative; margin-top: 30px; width: 100%; height: 60.1562vh; }
-	section.rooms ul > li { display: none; position: absolute; width: 100%; height: 100%; }
-	section.rooms ul > li:nth-child(1) { display: block; }
-	section.rooms ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.rooms ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.rooms ul > li > a::after { content:""; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 60%; background: linear-gradient(to top, #40311e, transparent); }
-
-	section.rooms div.info { position: absolute; left: 0; bottom: 0; padding-bottom: 30px; width: 100%; color: #fff; }
-	section.rooms div.info p.title { margin: 0; font-size: 2em; font-weight: bold; }
-	section.rooms div.info p.desc { margin-top: 10px; padding: 0 22.1354vw; }
-	section.rooms .view_more { background: transparent; border: 2px solid #fff; }
-
-
-
-	/* +++ section.dining +++*/
-	/* ++ content ++*/
-	section.dining { height: 36.3281vh; }
-
-	section.dining div.img_wrap { overflow: hidden; float: right; position: relative; width: 50%; height: 100%; }
-	section.dining div.img_wrap img { display: block; position: absolute; width: 100%; height: 100%; object-fit: cover; }
-
-	section.dining div.info_wrap { float: left; width: 50%; height: 100%; background: #a69e8f; }
-	section.dining div.inner_wrap_half { float: right; position: relative; width: 100%; height: 100%; }
-	section.dining div.info_wrap div.info { position: absolute; right: 0; top: 50%; width: 100%; padding: 0 2.6041vw 0 2.6041vw; transform: translateY(-50%); }
-
-
-
-	/* +++ section.activities +++*/
-	/* ++ bg ++*/
-	section.activities div.bg { overflow: hidden; }
-	section.activities div.bg div.bg_04 div { position: absolute; right: 0; top: 0; width: 30%; }
-	section.activities div.bg div.bg_04 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.activities div.bg div.bg_04 div.dep_01 { animation-name: ani_bg_07; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_07 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	section.activities div.bg div.bg_04 div.dep_02 { animation-name: ani_bg_08; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_08 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.activities div.inner_wrap { margin-top: 110px; }
-
-	section.activities div.content_wrap { margin-top: 50px; width: 100%; height: 100%; }
-
-	section.activities div.info_wrap { width: 100%; }
-
-	section.activities ul { position: relative; width: 100%; height: 52.9296vh; }
-	section.activities ul > li { overflow: hidden; height: 100%; }
-	section.activities ul > li:nth-child(1) { position: absolute; left: 0; top:0; width: 35vw; }
-	section.activities ul > li:nth-child(2) { position: absolute; left: 29.5%; top:0; width: 41vw; }
-	section.activities ul > li:nth-child(3) { position: absolute; right: 0; top:0; width: 35vw; }
-	section.activities ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.activities ul > li:nth-child(1) > a { clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%); }
-	section.activities ul > li:nth-child(2) > a { clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 13% 100%); }
-	section.activities ul > li:nth-child(3) > a { clip-path: polygon(0 0, 100% 0%, 100% 100%, 15% 100%); }
-	section.activities ul > li > a > picture { display: block; position: relative; width: 100%; height: 100%; }
-	section.activities ul > li > a > picture::before { content: ""; display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; background: #000; opacity: 0.5; }
-	section.activities ul > li > a > picture > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.activities ul > li > a > div.info { position: absolute; z-index: 2; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-	section.activities ul > li > a > div.info > p.title { margin: 0; color: #fff; font-size: 2em; font-weight: bold; line-height: 1.5; }
-	section.activities ul > li > a > div.info > p.click { margin: 0; color: #fff; line-height: 1.5; }
-
-
-
-	/* +++ section.facilities +++*/
-	/* ++ content ++*/
-	section.facilities { margin-top: 110px; height: 32vh; }
-
-	section.facilities > div.inner_wrap { width: 100%; height: 100%; }
-	section.facilities > div.inner_wrap > div.info { display: inline-block; position: absolute; left: 0; top: 50%; float: left; width: 50%; padding: 2.8645vw; transform: translateY(-50%); }
-
-	section.facilities div.img_wrap { overflow: hidden; float: right; width: 50%; height: 100%; padding: 2.8645vw 0; }
-	section.facilities div.img_wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.facilities div.img_wrap .fac_01 { float: left; display: block; width: 49.8655%; height: 13vh; object-fit: cover; }
-	section.facilities div.img_wrap .fac_02 { float: right; display: block; width: 49.8655%; height: 13vh; margin-bottom: 0.106723vh; object-fit: cover; }
-	section.facilities div.img_wrap .fac_03 { clear: both; display: block; width: 100%; height: 13vh; object-fit: cover; }
-
-
-
-	/* +++ section.event +++*/
-	/* ++ bg ++*/
-	section.event div.bg { overflow: hidden; transform: translate(4vw, -5vh); }
-	section.event div.bg div.bg_05 div { position: absolute; left: 0; top: 0; width: 30%; }
-	section.event div.bg div.bg_05 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.event div.bg div.bg_05 div.dep_01 { animation-name: ani_bg_09; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_09 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	section.event div.bg div.bg_05 div.dep_02 { animation-name: ani_bg_10; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_10 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.event div.content_wrap { margin-top: 110px; }
-	section.event div.view_mask { position: relative; margin-top: 50px; text-align: left; }
-
-	section.event ul > li { position: relative; display: inline-block; margin: 0 2.8645vw 1.9531vh 2.8645vw; width: 100%; height: 17.8710vh;  }
-	section.event ul > li > a { overflow: hidden; float: left; display: inline-block; width: 50%; height: 100%; }
-	section.event ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.event ul > li > a > img.ico_viewmore { display: none; }
-	section.event ul > li > div.info { float: right; display: inline-block; width: 50%; padding: 0.9vh 5.5989vw; position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
-	section.event ul > li > div.info > p.title { margin: 0; }
-
-
-
-	/* +++ section.social +++*/
-	/* ++ bg ++*/
-	section.social div.bg { overflow: hidden; }
-	section.social div.bg div.bg_06 div { position: absolute; left: 0; bottom: 0; width: 30%; }
-	section.social div.bg div.bg_06 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.social div.bg div.bg_06 div.dep_01 { animation-name: ani_bg_11; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_11 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	section.social div.bg div.bg_07 div { position: absolute; right: 0; bottom: 0; width: 30%; }
-	section.social div.bg div.bg_07 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-	section.social div.bg div.bg_07 div.dep_01 { animation-name: ani_bg_12; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_12 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(-10deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.social div.content_wrap { overflow: hidden; margin-top: 90px; padding-bottom: 90px; }
-	section.social div.view_mask { overflow: hidden; position: relative; width: 100%; margin-top: 50px; }
-
-	section.social ul { width: 200%; }
-	section.social ul > li { float: left; position: relative; width: 16.6666%; }
-	section.social ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.social ul > li > a > img.sns_bg { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.social ul > li > a::before { content: ""; display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.9), transparent); }
-	section.social ul > li > a > img.ico_sns { display: none; }
-	section.social ul > li > a > div.info { position: absolute; right: 10px; top: 10px; width: 100%; z-index: 2; text-align: right; }
-	section.social ul > li > a > div.info > img.profile { overflow: hidden; float: right; width: 54px; height: 54px; border-radius: 50%; }
-	section.social ul > li > a > div.info > p { float: right; margin-right: 10px; color: #fff; text-align: right; }
-	section.social ul > li > a > div.info > p.user { display: inline-block; width: 70%; font-size: 1em; }
-	section.social ul > li > a > div.info > p.comment { display: inline-block; width: 70%; font-size: 1em; }
-	section.social ul > li > a > div.info > p.hashs { display: none; }
-	section.social ul > li > a > div.info > img.ico_sns { position: absolute; right: 10px; top: -57px; z-index: 3; }
-
-	section.social div.pagination { margin-top: 20px; }
-
-
-	hr.long { width: 100%; height: 2px; background: #ebe6d5; }
-
-
-
+  h2 {
+    font-size: 2em;
+  }
+
+  /*좌우 margin 기준: 22px (2.8645vw)*/
+
+  /* +++ section.visual +++*/
+  section.visual {
+    overflow: hidden;
+    clear: both;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  section.visual > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  section.visual > div.slogans {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    height: 2.5em;
+    font-weight: bold;
+    font-size: 5em;
+  }
+  section.visual > div.slogans > p.slogan_left {
+    color: rgba(255, 255, 255, 0.7);
+    transform: translateX(-10%);
+    animation-name: ani_slogan_left;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    line-height: 1.25;
+  }
+  section.visual > div.slogans > p.slogan_right {
+    color: #fff;
+    transform: translateX(10%);
+    animation-name: ani_slogan_right;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    line-height: 1.25;
+  }
+
+  @keyframes ani_slogan_left {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes ani_slogan_right {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  section.visual > span.ico_scr {
+    display: inline-block;
+    position: absolute;
+    left: 47%;
+    bottom: 4em;
+    width: 3em;
+    height: 3em;
+    margin-top: 0.2em;
+    border-left: 0.3em solid #fff;
+    border-bottom: 0.3em solid #fff;
+    transform: rotate(-45deg);
+    animation-name: ani_scroll;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+  span.ico_scr > span.inner_bar {
+    display: none;
+  }
+
+  @keyframes ani_scroll {
+    0% {
+      transform: rotate(-45deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
+
+  /* +++ section.promo +++*/
+  /* ++ bg ++*/
+  section.promo div.bg {
+    overflow: hidden;
+  }
+  section.promo div.bg div.bg_01 div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+  }
+  section.promo div.bg div.bg_01 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.promo div.bg div.bg_01 div.dep_01 {
+    animation-name: ani_bg_01;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_01 {
+    0% {
+      transform-origin: left top;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: left top;
+    }
+    100% {
+      transform-origin: left top;
+    }
+  }
+
+  section.promo div.bg div.bg_01 div.dep_02 {
+    animation-name: ani_bg_02;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_02 {
+    0% {
+      transform-origin: left top;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: left top;
+    }
+    100% {
+      transform-origin: left top;
+    }
+  }
+
+  section.promo div.bg div.bg_02 div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+  }
+  section.promo div.bg div.bg_02 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.promo div.bg div.bg_02 div.dep_01 {
+    animation-name: ani_bg_03;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_03 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(-10deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  section.promo div.bg div.bg_02 div.dep_02 {
+    animation-name: ani_bg_04;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_04 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(8deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  /* ++ content ++*/
+  section.promo div.content_wrap {
+    margin-top: 90px;
+    padding: 0 2.8645vw;
+  }
+
+  section.promo hr.short {
+    width: 80px;
+    height: 2px;
+    margin: 28px auto 0;
+    background: #40311e;
+  }
+
+  section.promo div.content_wrap p.lead {
+    margin-top: 28px;
+    padding: 0 18%;
+  }
+
+  section.promo div.view_mask {
+    margin-top: 40px;
+  }
+
+  section.promo ul li {
+    float: left;
+    width: 33%;
+    padding: 0 1.75vw;
+  }
+  section.promo ul li img {
+    display: inline-block;
+    width: 132px;
+    object-fit: cover;
+  }
+  section.promo ul li p.title {
+    margin-top: 1em;
+  }
+  section.promo ul li p.desc {
+    margin-top: 1em;
+  }
+
+  /* +++ section.rooms +++*/
+  /* ++ bg ++*/
+  section.rooms div.bg {
+    overflow: hidden;
+  }
+  section.rooms div.bg div.bg_03 div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+  }
+  section.rooms div.bg div.bg_03 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.rooms div.bg div.bg_03 div.dep_01 {
+    animation-name: ani_bg_05;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_05 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  section.rooms div.bg div.bg_03 div.dep_02 {
+    animation-name: ani_bg_06;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_06 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.rooms {
+    margin-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  section.rooms div.content_wrap {
+    margin-top: 30px;
+    padding: 0 5.25em;
+  }
+
+  section.rooms div.view_mask {
+    position: relative;
+  }
+
+  section.rooms div.rel {
+    position: relative;
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid #ebe6d5;
+  }
+
+  section.rooms div.tabs_wrap button {
+    display: inline-block;
+    width: 25%;
+    padding: 0 0.6em 0.6em;
+  }
+  section.rooms div.tabs_wrap div.rel button span {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 1.25em;
+    color: #40311e;
+    text-align: center;
+  }
+  section.rooms div.tabs_wrap div.rel button span.tab-active {
+    font-weight: bold;
+  }
+
+  section.rooms div.tabs_wrap span.bar {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    z-index: 3;
+    width: 19.53125vw;
+    height: 4px;
+    background: #40311e;
+    transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  section.rooms ul {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 60.1562vh;
+  }
+  section.rooms ul > li {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  section.rooms ul > li:nth-child(1) {
+    display: block;
+  }
+  section.rooms ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.rooms ul > li > a > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.rooms ul > li > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, #40311e, transparent);
+  }
+
+  section.rooms div.info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 30px;
+    width: 100%;
+    color: #fff;
+  }
+  section.rooms div.info p.title {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  section.rooms div.info p.desc {
+    margin-top: 10px;
+    padding: 0 22.1354vw;
+  }
+  section.rooms .view_more {
+    background: transparent;
+    border: 2px solid #fff;
+  }
+
+  /* +++ section.dining +++*/
+  /* ++ content ++*/
+  section.dining {
+    height: 36.3281vh;
+  }
+
+  section.dining div.img_wrap {
+    overflow: hidden;
+    float: right;
+    position: relative;
+    width: 50%;
+    height: 100%;
+  }
+  section.dining div.img_wrap img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.dining div.info_wrap {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: #a69e8f;
+  }
+  section.dining div.inner_wrap_half {
+    float: right;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.dining div.info_wrap div.info {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    padding: 0 2.6041vw 0 2.6041vw;
+    transform: translateY(-50%);
+  }
+
+  /* +++ section.activities +++*/
+  /* ++ bg ++*/
+  section.activities div.bg {
+    overflow: hidden;
+  }
+  section.activities div.bg div.bg_04 div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+  }
+  section.activities div.bg div.bg_04 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.activities div.bg div.bg_04 div.dep_01 {
+    animation-name: ani_bg_07;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_07 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  section.activities div.bg div.bg_04 div.dep_02 {
+    animation-name: ani_bg_08;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_08 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  /* ++ content ++*/
+  section.activities div.inner_wrap {
+    margin-top: 110px;
+  }
+
+  section.activities div.content_wrap {
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+  }
+
+  section.activities div.info_wrap {
+    width: 100%;
+  }
+
+  section.activities ul {
+    position: relative;
+    width: 100%;
+    height: 52.9296vh;
+  }
+  section.activities ul > li {
+    overflow: hidden;
+    height: 100%;
+  }
+  section.activities ul > li:nth-child(1) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35vw;
+  }
+  section.activities ul > li:nth-child(2) {
+    position: absolute;
+    left: 29.5%;
+    top: 0;
+    width: 41vw;
+  }
+  section.activities ul > li:nth-child(3) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35vw;
+  }
+  section.activities ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.activities ul > li:nth-child(1) > a {
+    clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+  }
+  section.activities ul > li:nth-child(2) > a {
+    clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 13% 100%);
+  }
+  section.activities ul > li:nth-child(3) > a {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 15% 100%);
+  }
+  section.activities ul > li > a > picture {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.activities ul > li > a > picture::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+  }
+  section.activities ul > li > a > picture > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.activities ul > li > a > div.info {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  section.activities ul > li > a > div.info > p.title {
+    margin: 0;
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  section.activities ul > li > a > div.info > p.click {
+    margin: 0;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  /* +++ section.facilities +++*/
+  /* ++ content ++*/
+  section.facilities {
+    margin-top: 110px;
+    height: 32vh;
+  }
+
+  section.facilities > div.inner_wrap {
+    width: 100%;
+    height: 100%;
+  }
+  section.facilities > div.inner_wrap > div.info {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    float: left;
+    width: 50%;
+    padding: 2.8645vw;
+    transform: translateY(-50%);
+  }
+
+  section.facilities div.img_wrap {
+    overflow: hidden;
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding: 2.8645vw 0;
+  }
+  section.facilities div.img_wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.facilities div.img_wrap .fac_01 {
+    float: left;
+    display: block;
+    width: 49.8655%;
+    height: 13vh;
+    object-fit: cover;
+  }
+  section.facilities div.img_wrap .fac_02 {
+    float: right;
+    display: block;
+    width: 49.8655%;
+    height: 13vh;
+    margin-bottom: 0.106723vh;
+    object-fit: cover;
+  }
+  section.facilities div.img_wrap .fac_03 {
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 13vh;
+    object-fit: cover;
+  }
+
+  /* +++ section.event +++*/
+  /* ++ bg ++*/
+  section.event div.bg {
+    overflow: hidden;
+    transform: translate(4vw, -5vh);
+  }
+  section.event div.bg div.bg_05 div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+  }
+  section.event div.bg div.bg_05 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.event div.bg div.bg_05 div.dep_01 {
+    animation-name: ani_bg_09;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_09 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  section.event div.bg div.bg_05 div.dep_02 {
+    animation-name: ani_bg_10;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_10 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.event div.content_wrap {
+    margin-top: 110px;
+  }
+  section.event div.view_mask {
+    position: relative;
+    margin-top: 50px;
+    text-align: left;
+  }
+
+  section.event ul > li {
+    position: relative;
+    display: inline-block;
+    margin: 0 2.8645vw 1.9531vh 2.8645vw;
+    width: 100%;
+    height: 17.871vh;
+  }
+  section.event ul > li > a {
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+  }
+  section.event ul > li > a > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.event ul > li > a > img.ico_viewmore {
+    display: none;
+  }
+  section.event ul > li > div.info {
+    float: right;
+    display: inline-block;
+    width: 50%;
+    padding: 0.9vh 5.5989vw;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  section.event ul > li > div.info > p.title {
+    margin: 0;
+  }
+
+  /* +++ section.social +++*/
+  /* ++ bg ++*/
+  section.social div.bg {
+    overflow: hidden;
+  }
+  section.social div.bg div.bg_06 div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+  }
+  section.social div.bg div.bg_06 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.social div.bg div.bg_06 div.dep_01 {
+    animation-name: ani_bg_11;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_11 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  section.social div.bg div.bg_07 div {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+  }
+  section.social div.bg div.bg_07 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.social div.bg div.bg_07 div.dep_01 {
+    animation-name: ani_bg_12;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_12 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(-10deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.social div.content_wrap {
+    overflow: hidden;
+    margin-top: 90px;
+    padding-bottom: 90px;
+  }
+  section.social div.view_mask {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  section.social ul {
+    width: 200%;
+  }
+  section.social ul > li {
+    float: left;
+    position: relative;
+    width: 16.6666%;
+  }
+  section.social ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.social ul > li > a > img.sns_bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.social ul > li > a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom left,
+      rgba(0, 0, 0, 0.9),
+      transparent
+    );
+  }
+  section.social ul > li > a > img.ico_sns {
+    display: none;
+  }
+  section.social ul > li > a > div.info {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 100%;
+    z-index: 2;
+    text-align: right;
+  }
+  section.social ul > li > a > div.info > img.profile {
+    overflow: hidden;
+    float: right;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+  }
+  section.social ul > li > a > div.info > p {
+    float: right;
+    margin-right: 10px;
+    color: #fff;
+    text-align: right;
+  }
+  section.social ul > li > a > div.info > p.user {
+    display: inline-block;
+    width: 70%;
+    font-size: 1em;
+  }
+  section.social ul > li > a > div.info > p.comment {
+    display: inline-block;
+    width: 70%;
+    font-size: 1em;
+  }
+  section.social ul > li > a > div.info > p.hashs {
+    display: none;
+  }
+  section.social ul > li > a > div.info > img.ico_sns {
+    position: absolute;
+    right: 10px;
+    top: -57px;
+    z-index: 3;
+  }
+
+  section.social div.pagination {
+    margin-top: 20px;
+  }
+
+  hr.long {
+    width: 100%;
+    height: 2px;
+    background: #ebe6d5;
+  }
 }
 /* ====== tablet(end) =======*/
 
@@ -944,405 +2010,883 @@ h2 { font-size: 2em; }
 /* ====== desktop(start) =======*/
 
 @media screen and (min-width: 1025px) {
-
-
-
-	/* +++ section.visual +++*/
-	section.visual { overflow: hidden; clear: both; position: relative; width: 100%; height: 100vh; }
-	section.visual > video { width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-	section.visual > div.slogans { position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto;  z-index: 2; height: 2em; font-weight: bold; font-size: 6.5em; }
-	section.visual > div.slogans > p.slogan_left { color: rgba(255, 255, 255, 0.7); line-height: 1em; transform: translateX(-30%); animation-name: ani_slogan_left; animation-duration: 6s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; }
-	section.visual > div.slogans > p.slogan_right { color: #fff; transform: translateX(30%); line-height: 1em; animation-name: ani_slogan_right; animation-duration: 6s; animation-timing-function: ease-in-out; animation-fill-mode: forwards; }
-
-	@keyframes ani_slogan_left {
-
-		0% {
-			opacity: 0;
-		}
-		60% {
-			opacity: 1;
-		}
-		100% {
-			transform: translateX(-19%);
-		}
-	}
-
-	@keyframes ani_slogan_right {
-
-		0% {
-			opacity: 0;
-		}
-		60% {
-			opacity: 1;
-		}
-		100% {
-			transform: translateX(19%);
-		}
-	}
-
-
-	section.visual > span.ico_scr { display: inline-block; position: absolute; bottom: 20px; left: 50%; width: 1.25em; height: 2.25em; border: 0.2em solid white; border-radius: 0.75em; font-size: 20px; line-height: 0; }
-	span.ico_scr > span.inner_bar { display: inline-block; width: 0.3em; height: 0.6em; margin-top: 0.2em; border-radius: 0.75em; background: white; animation-name: ani_scroll; animation-duration: 1.5s; animation-iteration-count: infinite; animation-timing-function: ease-in; }
-
-	@keyframes ani_scroll { 
-
-		from { 
-			transform: translateY(0%);
-		}
-
-		to {
-			transform: translateY(90%);
-		}
-
-	}
-
-
-
-	/* +++ section.promo +++*/
-	/* ++ bg ++*/
-	section.promo div.bg { overflow: hidden; }
-	section.promo div.bg div.bg_01 div { position: absolute; left: 0; top: 0; }
-	section.promo div.bg div.bg_01 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.promo div.bg div.bg_01 div.dep_01 { animation: ani_bg_01 6s ease-in-out 0.5s infinite; }
-
-	@keyframes ani_bg_01 { 
-
-		0% {
-			transform-origin: left top; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: left top; 
-		}
-		100% {
-			transform-origin: left top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_01 div.dep_02 { animation-name: ani_bg_02; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; animation-delay: 0.5s;}
-
-	@keyframes ani_bg_02 { 
-
-		0% {
-			transform-origin: left top; 
-		}
-		50% {
-			transform: rotate(8deg);
-			transform-origin: left top; 
-		}
-		100% {
-			transform-origin: left top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_02 div { position: absolute; right: 0; top: 0; }
-	section.promo div.bg div.bg_02 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.promo div.bg div.bg_02 div.dep_01 { animation-name: ani_bg_03; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_03 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(-10deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	section.promo div.bg div.bg_02 div.dep_02 { animation-name: ani_bg_04; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_04 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(8deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.promo div.content_wrap { margin-top: 125px; }
-	section.promo hr.short { width: 80px; height: 2px; margin: 28px auto 0; background: #40311e; }
-	section.promo div.content_wrap p.lead { margin-top: 28px; padding: 0 25.3091%; }
-	section.promo div.view_mask { margin-top: 50px; }
-
-	section.promo ul li { float: left; width: 33%; padding: 0 6%; }
-	section.promo ul li img { display: inline-block; width: 144px; object-fit: cover; }
-
-
-
-	/* +++ section.rooms +++*/
-	/* ++ bg ++*/
-	section.rooms div.bg { overflow: hidden; }
-	section.rooms div.bg div.bg_03 div { position: absolute; left: 0; bottom: 0; }
-	section.rooms div.bg div.bg_03 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.rooms div.bg div.bg_03 div.dep_01 { animation-name: ani_bg_05; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_05 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	section.rooms div.bg div.bg_03 div.dep_02 { animation-name: ani_bg_06; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_06 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.rooms { margin-top: 160px; padding-bottom: 160px; }
-	section.rooms div.view_mask { margin-top: 50px; }
-	section.rooms div.tabs_wrap { display: none; }
-
-	section.rooms ul > li { float: left; width: 23.6749%; margin-right: 1.7667%; }
-	section.rooms ul > li:last-child { margin-right: 0; }
-	section.rooms ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.rooms ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-	section.rooms ul > li > a:hover > img { transform: scale(1.06); }
-	section.rooms div.info { background: #f1f2f2; padding: 25px 24px 35px; }
-	section.rooms div.info p.title { margin: 0; }
-
-
-
-	/* +++ section.dining +++*/
-	/* ++ content ++*/
-	section.dining { height: 50.7291vh; min-height: 372px; }
-	section.dining div.img_wrap { overflow: hidden; float: right; position: relative; width: 50%; height: 100%; }
-	section.dining div.img_wrap img { display: block; position: absolute; width: 100%; height: 100%; object-fit: cover; }
-
-	section.dining div.info_wrap { float: left; width: 50%; height: 100%; background: #a69e8f; }
-	section.dining div.inner_wrap_half { float: right; position: relative; width: 100%; max-width: 566px; height: 100%; }
-	section.dining div.info_wrap div.info { position: absolute; right: 0; top: 50%; width: 100%; padding: 0 20.1388% 0 3.4722%; transform: translateY(-50%); }
-
-
-
-	/* +++ section.activities +++*/
-	/* ++ bg ++*/
-	section.activities div.bg { overflow: hidden; }
-	section.activities div.bg div.bg_04 div { position: absolute; right: 0; top: 0; }
-	section.activities div.bg div.bg_04 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.activities div.bg div.bg_04 div.dep_01 { animation-name: ani_bg_07; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_07 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	section.activities div.bg div.bg_04 div.dep_02 { animation-name: ani_bg_08; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_08 { 
-
-		0% {
-			transform-origin: right top; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: right top; 
-		}
-		100% {
-			transform-origin: right top; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.activities div.inner_wrap { margin-top: 160px; }
-	section.activities div.content_wrap { float: left; width: 74.5583%; height: 100%; }
-	section.activities div.info_wrap { float: right; width: 25.4416%; padding: 27.00106vh 0; }
-
-	section.activities ul > li { position: relative; overflow: hidden; float: left; width: 31.57203%; margin-right: 2.36966%; }
-	section.activities ul > li:last-child { margin-right: 0; }
-	section.activities ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.activities ul > li > a > picture { overflow: hidden; display: block; position: relative; width: 100%; height: 60.51227vh; }
-	section.activities ul > li > a > picture::before { content: ""; display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; background: #000; opacity: 0; transition: opacity 0.3s; }
-	section.activities ul > li:hover > a > picture::before { opacity: 0.5; }
-	section.activities ul > li > a > picture > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.activities ul > li > a > div.info { position: absolute; z-index: 2; left: 50%; top: 50%; opacity: 0; transform: translate(-50%, -50%); transition: opacity 0.3s; }
-	section.activities ul > li:hover > a > div.info { opacity: 1; }
-	section.activities ul > li > a > div.info > p.title { margin: 0; color: #fff; font-weight: bold; line-height: 1.5; }
-	section.activities ul > li > a > div.info > p.click { margin: 0; color: #fff; line-height: 1.5; }
-
-
-
-	/* +++ section.facilities +++*/
-	/* ++ content ++*/
-	section.facilities { margin-top: 160px; height: 33vh; }
-	section.facilities > div.inner_wrap { width: 100%; height: 100%; }
-	section.facilities > div.inner_wrap > div.info { display: inline-block; position: absolute; left: 0; top: 50%; float: left; width: 50%; padding: 0 5.7291vw; transform: translateY(-50%); }
-
-	section.facilities > div.inner_wrap > div.img_wrap { overflow: hidden; float: right; width: 50%; height: 100%; padding-left: 0.8833%; }
-	section.facilities div.img_wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.facilities div.img_wrap .fac_01 { float: left; display: block; width: 49.9100%; height: 16.648879vh; object-fit: cover; }
-	section.facilities div.img_wrap .fac_02 { float: right; display: block; width: 49.9100%; height: 16.648879vh; margin-bottom: 0.106723vh; object-fit: cover; }
-	section.facilities div.img_wrap .fac_03 { clear: both; display: block; width: 100%; height: 17.075773vh; object-fit: cover; }
-
-
-	/* +++ section.event +++*/
-	/* ++ bg ++*/
-	section.event div.bg { overflow: hidden; }
-	section.event div.bg div.bg_05 div { position: absolute; right: 78%; bottom: 60%; }
-	section.event div.bg div.bg_05 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.event div.bg div.bg_05 div.dep_01 { animation-name: ani_bg_09; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_09 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(10deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	section.event div.bg div.bg_05 div.dep_02 { animation-name: ani_bg_10; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_10 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.event div.content_wrap { margin-top: 160px; }
-	section.event div.view_mask { position: relative; margin-top: 50px; }
-
-	section.event ul > li { float: left; width: 32.15547%; margin-right: 1.7667%; }
-	section.event ul > li:last-child { margin-right: 0; }
-	section.event ul > li > a { overflow: hidden; display: block; position: relative; width: 100%; height: 100%; }
-	section.event ul > li > a::before { content: ""; display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; background: #000; opacity: 0; transition: opacity 0.3s; }
-	section.event ul > li > a:hover::before { opacity: 0.5; }
-	section.event ul > li > a > img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.event ul > li > a > img.ico_viewmore { position: absolute; z-index: 2; left: 0; top: 0; right: 0; bottom: 0; width: 33px; height: 33px; margin: auto; opacity: 0; transition: opacity 0.3s; }
-	section.event ul > li > a:hover > img.ico_viewmore { opacity: 1; }
-
-	section.event div.info { padding: 25px 24px 35px; }
-	section.event div.info p.title { margin: 0; }
-
-
-
-	/* +++ section.social +++*/
-	/* ++ bg ++*/
-	section.social div.bg { overflow: hidden; }
-	section.social div.bg div.bg_06 div { position: absolute; left: 0; bottom: 0; }
-	section.social div.bg div.bg_06 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.social div.bg div.bg_06 div.dep_01 { animation-name: ani_bg_11; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; animation-delay: 0.5s; }
-
-	@keyframes ani_bg_11 { 
-
-		0% {
-			transform-origin: left bottom; 
-		}
-		50% {
-			transform: rotate(-8deg);
-			transform-origin: left bottom; 
-		}
-		100% {
-			transform-origin: left bottom; 
-		}
-
-	}
-
-	section.social div.bg div.bg_07 div { position: absolute; right: -1%; bottom: 0; }
-	section.social div.bg div.bg_07 div img { display: block; width: 100%; height: 100%; object-fit: cover; }
-	section.social div.bg div.bg_07 div.dep_01 { animation-name: ani_bg_12; animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
-
-	@keyframes ani_bg_12 { 
-
-		0% {
-			transform-origin: right bottom; 
-		}
-		50% {
-			transform: rotate(-10deg);
-			transform-origin: right bottom; 
-		}
-		100% {
-			transform-origin: right bottom; 
-		}
-
-	}
-
-	/* ++ content ++*/
-	section.social div.content_wrap { overflow: hidden; margin-top: 160px; padding-bottom: 100px; }
-	section.social div.view_mask { overflow: hidden; position: relative; width: 100%; margin-top: 50px; }
-
-	section.social ul { width: 150%; }
-	section.social ul > li { float: left; position: relative; width: 16.6666%; padding: 0 2px; text-align: center; }
-	section.social ul > li > a { display: block; position: relative; width: 100%; height: auto; }
-	section.social ul > li > a > img.sns_bg { display: block; width: 100%; height: auto; object-fit: cover; }
-	section.social ul > li > a::before { content: ""; display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; background: #000; opacity: 0; transition: opacity 0.3s; }
-	section.social ul > li > a:hover::before { opacity: 0.7; }
-	section.social ul > li > a > img.ico_sns { position: absolute; right: 10px; top: 10px; z-index: 3; width: 32px; height: 32px; object-fit: cover; opacity: 0; transition: opacity 0.3s }
-	section.social ul > li > a:hover > img.ico_sns { opacity: 1; }
-	section.social ul > li > a > div.info { position: absolute; left: 50%; top: 50%; width: 100%; z-index: 2; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.3s; text-align: center; }
-	section.social ul > li > a:hover > div.info { opacity: 1; }
-	section.social ul > li > a > div.info > img.profile { overflow: hidden; display: inline-block; width: 72px; height: 72px; object-fit: cover; margin-bottom: 5px; border-radius: 50%; }
-	section.social ul > li > a > div.info > p { color: #fff; }
-	section.social ul > li > a > div.info > p.hashs { font-size: 0.875em; }
-
-	section.social div.pagination { margin-top: 20px; }
-
-
-	hr.long { width: 100%; height: 2px; background: #ebe6d5; }
-
-
-
+  /* +++ section.visual +++*/
+  section.visual {
+    overflow: hidden;
+    clear: both;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  section.visual > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  section.visual > div.slogans {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    height: 2em;
+    font-weight: bold;
+    font-size: 6.5em;
+  }
+  section.visual > div.slogans > p.slogan_left {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1em;
+    transform: translateX(-30%);
+    animation-name: ani_slogan_left;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  section.visual > div.slogans > p.slogan_right {
+    color: #fff;
+    transform: translateX(30%);
+    line-height: 1em;
+    animation-name: ani_slogan_right;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes ani_slogan_left {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-19%);
+    }
+  }
+
+  @keyframes ani_slogan_right {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(19%);
+    }
+  }
+
+  section.visual > span.ico_scr {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 1.25em;
+    height: 2.25em;
+    border: 0.2em solid white;
+    border-radius: 0.75em;
+    font-size: 20px;
+    line-height: 0;
+  }
+  span.ico_scr > span.inner_bar {
+    display: inline-block;
+    width: 0.3em;
+    height: 0.6em;
+    margin-top: 0.2em;
+    border-radius: 0.75em;
+    background: white;
+    animation-name: ani_scroll;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+
+  @keyframes ani_scroll {
+    from {
+      transform: translateY(0%);
+    }
+
+    to {
+      transform: translateY(90%);
+    }
+  }
+
+  /* +++ section.promo +++*/
+  /* ++ bg ++*/
+  section.promo div.bg {
+    overflow: hidden;
+  }
+  section.promo div.bg div.bg_01 div {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  section.promo div.bg div.bg_01 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.promo div.bg div.bg_01 div.dep_01 {
+    animation: ani_bg_01 6s ease-in-out 0.5s infinite;
+  }
+
+  @keyframes ani_bg_01 {
+    0% {
+      transform-origin: left top;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: left top;
+    }
+    100% {
+      transform-origin: left top;
+    }
+  }
+
+  section.promo div.bg div.bg_01 div.dep_02 {
+    animation-name: ani_bg_02;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes ani_bg_02 {
+    0% {
+      transform-origin: left top;
+    }
+    50% {
+      transform: rotate(8deg);
+      transform-origin: left top;
+    }
+    100% {
+      transform-origin: left top;
+    }
+  }
+
+  section.promo div.bg div.bg_02 div {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  section.promo div.bg div.bg_02 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.promo div.bg div.bg_02 div.dep_01 {
+    animation-name: ani_bg_03;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_03 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(-10deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  section.promo div.bg div.bg_02 div.dep_02 {
+    animation-name: ani_bg_04;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_04 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(8deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  /* ++ content ++*/
+  section.promo div.content_wrap {
+    margin-top: 125px;
+  }
+  section.promo hr.short {
+    width: 80px;
+    height: 2px;
+    margin: 28px auto 0;
+    background: #40311e;
+  }
+  section.promo div.content_wrap p.lead {
+    margin-top: 28px;
+    padding: 0 25.3091%;
+  }
+  section.promo div.view_mask {
+    margin-top: 50px;
+  }
+
+  section.promo ul li {
+    float: left;
+    width: 33%;
+    padding: 0 6%;
+  }
+  section.promo ul li img {
+    display: inline-block;
+    width: 144px;
+    object-fit: cover;
+  }
+
+  /* +++ section.rooms +++*/
+  /* ++ bg ++*/
+  section.rooms div.bg {
+    overflow: hidden;
+  }
+  section.rooms div.bg div.bg_03 div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  section.rooms div.bg div.bg_03 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.rooms div.bg div.bg_03 div.dep_01 {
+    animation-name: ani_bg_05;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_05 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  section.rooms div.bg div.bg_03 div.dep_02 {
+    animation-name: ani_bg_06;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_06 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.rooms {
+    margin-top: 160px;
+    padding-bottom: 160px;
+  }
+  section.rooms div.view_mask {
+    margin-top: 50px;
+  }
+  section.rooms div.tabs_wrap {
+    display: none;
+  }
+
+  section.rooms ul > li {
+    float: left;
+    width: 23.6749%;
+    margin-right: 1.7667%;
+  }
+  section.rooms ul > li:last-child {
+    margin-right: 0;
+  }
+  section.rooms ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.rooms ul > li > a > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+  }
+  section.rooms ul > li > a:hover > img {
+    transform: scale(1.06);
+  }
+  section.rooms div.info {
+    background: #f1f2f2;
+    padding: 25px 24px 35px;
+  }
+  section.rooms div.info p.title {
+    margin: 0;
+  }
+
+  /* +++ section.dining +++*/
+  /* ++ content ++*/
+  section.dining {
+    height: 50.7291vh;
+    min-height: 372px;
+  }
+  section.dining div.img_wrap {
+    overflow: hidden;
+    float: right;
+    position: relative;
+    width: 50%;
+    height: 100%;
+  }
+  section.dining div.img_wrap img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section.dining div.info_wrap {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: #a69e8f;
+  }
+  section.dining div.inner_wrap_half {
+    float: right;
+    position: relative;
+    width: 100%;
+    max-width: 566px;
+    height: 100%;
+  }
+  section.dining div.info_wrap div.info {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    padding: 0 20.1388% 0 3.4722%;
+    transform: translateY(-50%);
+  }
+
+  /* +++ section.activities +++*/
+  /* ++ bg ++*/
+  section.activities div.bg {
+    overflow: hidden;
+  }
+  section.activities div.bg div.bg_04 div {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  section.activities div.bg div.bg_04 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.activities div.bg div.bg_04 div.dep_01 {
+    animation-name: ani_bg_07;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_07 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  section.activities div.bg div.bg_04 div.dep_02 {
+    animation-name: ani_bg_08;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_08 {
+    0% {
+      transform-origin: right top;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: right top;
+    }
+    100% {
+      transform-origin: right top;
+    }
+  }
+
+  /* ++ content ++*/
+  section.activities div.inner_wrap {
+    margin-top: 160px;
+  }
+  section.activities div.content_wrap {
+    float: left;
+    width: 74.5583%;
+    height: 100%;
+  }
+  section.activities div.info_wrap {
+    float: right;
+    width: 25.4416%;
+    padding: 27.00106vh 0;
+  }
+
+  section.activities ul > li {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 31.57203%;
+    margin-right: 2.36966%;
+  }
+  section.activities ul > li:last-child {
+    margin-right: 0;
+  }
+  section.activities ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.activities ul > li > a > picture {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 60.51227vh;
+  }
+  section.activities ul > li > a > picture::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  section.activities ul > li:hover > a > picture::before {
+    opacity: 0.5;
+  }
+  section.activities ul > li > a > picture > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.activities ul > li > a > div.info {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+  }
+  section.activities ul > li:hover > a > div.info {
+    opacity: 1;
+  }
+  section.activities ul > li > a > div.info > p.title {
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  section.activities ul > li > a > div.info > p.click {
+    margin: 0;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  /* +++ section.facilities +++*/
+  /* ++ content ++*/
+  section.facilities {
+    margin-top: 160px;
+    height: 33vh;
+  }
+  section.facilities > div.inner_wrap {
+    width: 100%;
+    height: 100%;
+  }
+  section.facilities > div.inner_wrap > div.info {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    float: left;
+    width: 50%;
+    padding: 0 5.7291vw;
+    transform: translateY(-50%);
+  }
+
+  section.facilities > div.inner_wrap > div.img_wrap {
+    overflow: hidden;
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding-left: 0.8833%;
+  }
+  section.facilities div.img_wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.facilities div.img_wrap .fac_01 {
+    float: left;
+    display: block;
+    width: 49.91%;
+    height: 16.648879vh;
+    object-fit: cover;
+  }
+  section.facilities div.img_wrap .fac_02 {
+    float: right;
+    display: block;
+    width: 49.91%;
+    height: 16.648879vh;
+    margin-bottom: 0.106723vh;
+    object-fit: cover;
+  }
+  section.facilities div.img_wrap .fac_03 {
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 17.075773vh;
+    object-fit: cover;
+  }
+
+  /* +++ section.event +++*/
+  /* ++ bg ++*/
+  section.event div.bg {
+    overflow: hidden;
+  }
+  section.event div.bg div.bg_05 div {
+    position: absolute;
+    right: 78%;
+    bottom: 60%;
+  }
+  section.event div.bg div.bg_05 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.event div.bg div.bg_05 div.dep_01 {
+    animation-name: ani_bg_09;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_09 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(10deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  section.event div.bg div.bg_05 div.dep_02 {
+    animation-name: ani_bg_10;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_10 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.event div.content_wrap {
+    margin-top: 160px;
+  }
+  section.event div.view_mask {
+    position: relative;
+    margin-top: 50px;
+  }
+
+  section.event ul > li {
+    float: left;
+    width: 32.15547%;
+    margin-right: 1.7667%;
+  }
+  section.event ul > li:last-child {
+    margin-right: 0;
+  }
+  section.event ul > li > a {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  section.event ul > li > a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  section.event ul > li > a:hover::before {
+    opacity: 0.5;
+  }
+  section.event ul > li > a > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.event ul > li > a > img.ico_viewmore {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 33px;
+    height: 33px;
+    margin: auto;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  section.event ul > li > a:hover > img.ico_viewmore {
+    opacity: 1;
+  }
+
+  section.event div.info {
+    padding: 25px 24px 35px;
+  }
+  section.event div.info p.title {
+    margin: 0;
+  }
+
+  /* +++ section.social +++*/
+  /* ++ bg ++*/
+  section.social div.bg {
+    overflow: hidden;
+  }
+  section.social div.bg div.bg_06 div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  section.social div.bg div.bg_06 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.social div.bg div.bg_06 div.dep_01 {
+    animation-name: ani_bg_11;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes ani_bg_11 {
+    0% {
+      transform-origin: left bottom;
+    }
+    50% {
+      transform: rotate(-8deg);
+      transform-origin: left bottom;
+    }
+    100% {
+      transform-origin: left bottom;
+    }
+  }
+
+  section.social div.bg div.bg_07 div {
+    position: absolute;
+    right: -1%;
+    bottom: 0;
+  }
+  section.social div.bg div.bg_07 div img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  section.social div.bg div.bg_07 div.dep_01 {
+    animation-name: ani_bg_12;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ani_bg_12 {
+    0% {
+      transform-origin: right bottom;
+    }
+    50% {
+      transform: rotate(-10deg);
+      transform-origin: right bottom;
+    }
+    100% {
+      transform-origin: right bottom;
+    }
+  }
+
+  /* ++ content ++*/
+  section.social div.content_wrap {
+    overflow: hidden;
+    margin-top: 160px;
+    padding-bottom: 100px;
+  }
+  section.social div.view_mask {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  section.social ul {
+    width: 150%;
+  }
+  section.social ul > li {
+    float: left;
+    position: relative;
+    width: 16.6666%;
+    padding: 0 2px;
+    text-align: center;
+  }
+  section.social ul > li > a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  section.social ul > li > a > img.sns_bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  section.social ul > li > a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  section.social ul > li > a:hover::before {
+    opacity: 0.7;
+  }
+  section.social ul > li > a > img.ico_sns {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 3;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  section.social ul > li > a:hover > img.ico_sns {
+    opacity: 1;
+  }
+  section.social ul > li > a > div.info {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+  }
+  section.social ul > li > a:hover > div.info {
+    opacity: 1;
+  }
+  section.social ul > li > a > div.info > img.profile {
+    overflow: hidden;
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    margin-bottom: 5px;
+    border-radius: 50%;
+  }
+  section.social ul > li > a > div.info > p {
+    color: #fff;
+  }
+  section.social ul > li > a > div.info > p.hashs {
+    font-size: 0.875em;
+  }
+
+  section.social div.pagination {
+    margin-top: 20px;
+  }
+
+  hr.long {
+    width: 100%;
+    height: 2px;
+    background: #ebe6d5;
+  }
 }
 /* ====== desktop(end) =======*/

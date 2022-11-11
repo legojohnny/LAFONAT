@@ -1,161 +1,226 @@
+$(document).ready(function () {
+  //
+  // 메뉴버튼 클릭시 네비게이션 나타나는 기능
+  //
+  var nav_menu = document.getElementsByClassName("nav_menu")[0];
+  var btn_menu = document.getElementById("btn_menu");
 
-$(document).ready(function(){
+  // 메뉴 버튼을 클릭하면
+  btn_menu.onclick = function () {
+    nav_menu.classList.toggle("on");
+    btn_menu.classList.toggle("on");
+    $("body").toggleClass("hidden"); // 네비게이션이 나왔을때 배경 스크롤 금지
+  };
 
-var isMobile = false; //initiate as false
+  // 모바일 네비게이션 리스트 아코디언
+  let mobile = window.matchMedia("(max-width: 767px)");
+  if (mobile.matches == true) {
+    var listClick = document.querySelectorAll("ul.menu > li");
 
-// device detection
-if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) {
-    isMobile = true;
-}
+    for (var i = 0; i < listClick.length; i++) {
+      listClick[i].addEventListener("click", function (e) {
+        e.preventDefault();
 
-//슬라이드
-	function rolling_slides(_targetWrap){
+        if (this.classList.contains("active")) {
+          this.classList.remove("active");
+        } else {
+          for (var x = 0; x < listClick.length; x++) {
+            listClick[x].classList.remove("active");
+          }
+          this.classList.add("active");
+        }
+      });
+    }
+  }
 
-		const $wrap = _targetWrap;		
-		const $mask = $($wrap + " div.view_mask");
-		let $inner_ul = $($wrap +" div.view_mask > ul");
-		let $inner_ul_li = $($wrap +" div.view_mask > ul > li");
-		const $btn_prev = $($wrap +" button.prev");
-		const $btn_next = $($wrap +" button.next");
-		
-		const li_width = $inner_ul_li.outerWidth();
-		const move_cnt = 1;
-		const duration = 300;
-		let click_Event = true;
-		let si_01 = 0;
+  //슬라이드
+  // 반복 SLIDE 디자인
+  function infiniteSlide(targetWrap) {
+    const wrap = targetWrap; // 슬라이드 영역
+    const mask = $(wrap + " div.view_mask"); // 슬라이드 mask
+    let innerUl = $(wrap + " div.view_mask > ul"); // 슬라이드 ul
+    let innerList = $(wrap + " div.view_mask > ul > li"); // 슬라이드 list
+    const btnPrev = $(wrap + " button.prev"); // 이전 버튼
+    const btnNext = $(wrap + " button.next"); // 다음 버튼
+    const listWidth = innerList.outerWidth(); // list border 포함한 넓이
+    const moveCnt = 1; // 클릭
+    const duration = 300; // 슬라이드 지연 시간
+    let clickEvent = true; // 클릭 이벤트 발생여부
+    let setTime = 0; // 슬라이드 setInterval, clearInterval 확인
 
-		(function init(){
-			for(var i = 1; i<= move_cnt; i++){
-				$inner_ul_li.last().prependTo($inner_ul);
-			}
-			$inner_ul.css("margin-left", -(li_width * move_cnt) + "px");
-		})();
+    // 슬라이드 기본 함수
+    (function init() {
+      for (var i = 1; i <= moveCnt; i++) {
+        innerList.last().prependTo(innerUl); // 마지막 list 를 ul의 맨처음에 넣기
+      }
+      innerUl.css("margin-left", -(listWidth * moveCnt) + "px"); // list 넓이에 클릭 횟수를 곱한 만큼 ul 왼쪽으로 옮기기 그래야 첫번째 li로 ul 시작되는 것처럼 보임
+    })();
 
-		$btn_prev.click(function(){
-			if(click_Event){
-				click_Event = false;
-				movement(1);
-			}
-			else { return };
-		});
+    // 이전 버튼 클릭 함수
+    btnPrev.click(function test() {
+      if (clickEvent) {
+        // 클릭 이벤트가 true면
+        clickEvent = false; // 클릭 이벤트 값에 false를 넣음
+        movement(1); // 이동 함수 (1) 실행
+      } else {
+        // 클릭 이벤트가 false면
+        return; // 함수 종료
+      }
+    });
 
-		$btn_next.click(function(){
-			if(click_Event){
-				click_Event = false;
-				movement(-1);
-			}
-			else { return };
-		});
-		
-		function movement(_direction){
-			stop_si();
-			$inner_ul.animate({ left: li_width * _direction * move_cnt + "px"}, duration, function(){
-				for(var i = 1; i <= move_cnt; i++){
-					$inner_ul_li = $($wrap + " div.view_mask > ul > li");
-					if(_direction == 1){
-						$inner_ul_li.last().prependTo($inner_ul);
-					}
-					else if(_direction == -1){
-						$inner_ul_li.first().appendTo($inner_ul);
-					}
-				}
-				$inner_ul.css("left", "0px");
-				click_Event = true;
-				start_si();
-			});
-		}
+    // 다음 버튼 클릭 함수
+    btnNext.click(function () {
+      if (clickEvent) {
+        // 클릭 이벤트가 true면
+        clickEvent = false; // 클릭 이벤트 값에 false를 넣음
+        movement(-1); // 이동 함수 (-1) 실행
+      } else {
+        // 클릭 이벤트가 false면
+        return; // 함수 종료
+      }
+    });
 
-		function start_si(){
-			if(si_01 != 0){
-				clearInterval(si_01);
-			}
-			si_01 = setInterval(function(){$btn_next.click()}, 3000);
-		}
-		function stop_si(){
-			if(si_01 != 0) clearInterval(si_01);
-			si_01 = 0;
-		}
-		start_si();
+    // 이동 함수
+    function movement(direction) {
+      //direction 값 들어오면
+      stopTime(); // 반복 정지 함수
+      innerUl.animate(
+        { left: listWidth * direction * moveCnt + "px" }, // 최종 변화 화면이 왼쪽에서 list 넓이에 이동 방향 곱해진 값만큼 이동(ul의 display가 block 이여서 property 설정에 따른 변경은 반영되지 않지만, position이 relative, fixed, absolute인 경우에는 반영됨. 참고: https://www.w3schools.com/jquery/jquery_animate.asp)
+        duration, // 지연 시간: display block 에서도 반영됨
+        function () {
+          // 콜백함수: display block 에서도 반영됨
+          for (var i = 1; i <= moveCnt; i++) {
+            innerList = $(wrap + " div.view_mask > ul > li"); // 슬라이드 li 재할당
+            if (direction == 1) {
+              // 이전 버튼 클릭되면
+              innerList.last().prependTo(innerUl); // 마지막 list 를 ul의 처음에 넣기
+            } else if (direction == -1) {
+              //다음 버튼 클릭되면
+              innerList.first().appendTo(innerUl); // 첫번째 list 를 ul의 마지막에 넣기
+            }
+          }
+          innerUl.css("left", "0px"); // display block 인 경우 반영안됨.
+          clickEvent = true; // 클릭 이벤트 값에 true 넣기
+          startTime(); // 반복 함수 실행
+        }
+      );
+    }
 
-	}
+    // 시작 함수
+    function startTime() {
+      if (setTime != 0) {
+        //타이머가 0이 아니면
+        clearInterval(setTime); // 타이머 종료
+      }
+      setTime = setInterval(function () {
+        // 반복 실행
+        btnNext.click(); // 다음 버튼 클릭 함수
+      }, 3000); // 3초간 반복
+    }
+    // 반복 정지 함수
+    function stopTime() {
+      if (setTime != 0) clearInterval(setTime); // 타이머가 0이 아니면 타이머 종료
+      setTime = 0; // 타이머 값으로 0
+    }
+    // 반복 SLIDE 디자인 실행 시 시작함수 자동 실행
+    startTime();
+  }
 
-	let rolling_01 = rolling_slides(".sns");
+  // sns 영역 slide 실행
+  infiniteSlide(".sns");
 
+  //
+  //탭 버튼 클릭시 해당 페이지로 전환
+  //
+  const tabMenu = document.querySelectorAll(".rel button");
+  const tabText = document.querySelectorAll(".rel button span");
+  const tabContent = document.querySelectorAll(".lists_wrap li");
+  const tabBar = document.querySelector(".bar");
+  var cnt_num = 0;
 
+  // 탭 모바일, 태블릿 반응형 디자인
+  let mobileTablet = window.matchMedia("(max-width: 1024px");
+  if (mobileTablet.matches == true) {
+    (function lists_init() {
+      tabContent[0].style.display = "block";
+      tabText.forEach(function (item, idx) {
+        item.classList.remove("tab-active");
+      });
+      tabText[0].classList.add("tab-active");
+      tabBar.style.left = tabMenu[0].offsetLeft;
+      +"px";
+    })();
+    // 탭 버튼 클릭시
+    tabMenu.forEach(function (item, idx) {
+      item.addEventListener("click", function () {
+        if (idx == cnt_num) return;
+        cnt_num = idx;
+        showContent(cnt_num);
+        moveTabBar(cnt_num);
+        $(this).siblings().find("span").removeClass("tab-active");
+        $(this).find("span").addClass("tab-active");
+      });
+    });
+    // 클릭된 탭 인덱스 받아와서 동일한 인덱스 이미지 보여주기
+    function showContent(num) {
+      tabContent.forEach(function (item, idx) {
+        item.style.display = "none";
+      });
+      tabContent[num].style.display = "block";
+    }
+    // 탭버튼 offsetLeft 값 만큼 바 이동
+    function moveTabBar(num) {
+      const newLeft = tabMenu[num].offsetLeft;
+      tabBar.style.left = newLeft + "px";
+    }
+  }
 
-
-	if(!isMobile){
-//탭 버튼 클릭시 해당 페이지로 전환
-			const tabMenu = document.querySelectorAll('.rel button');
-			const tabContent = document.querySelectorAll('.lists_wrap li');
-			const highLight = document.querySelector('.bar');
-
-			tabMenu.forEach(function(item, idx){
-				item.addEventListener('click', function(){
-					showContent(idx);
-					moveHighLight(idx);
-					$(this).find('span').addClass('tab-active');
-					$(this).siblings().find('span').removeClass('tab-active');
-				});
-			});
-			function showContent(num){
-				var windowWidth = $( window ).width();
-					tabContent.forEach(function(item){
-					item.style.display = 'block';
-					});
-			}
-			function moveHighLight(num){
-				const newLeft = tabMenu[num].offsetLeft;
-				const newWidth = tabMenu[num].offsetWidth;
-				console.log(newWidth);
-				highLight.style.left = newLeft + 'px';
-				highLight.style.width = newWidth + 'px';
-			}
-
-	}
-	else {
-	
-			const tabMenu = document.querySelectorAll('.rel button');
-			const tabContent = document.querySelectorAll('.lists_wrap li');
-			const highLight = document.querySelector('.bar');
-
-			tabMenu.forEach(function(item, idx){
-				item.addEventListener('click', function(){
-					showContent(idx);
-					moveHighLight(idx);
-					$(this).find('span').addClass('tab-active');
-					$(this).siblings().find('span').removeClass('tab-active');
-				});
-			});
-			function showContent(num){
-				var windowWidth = $( window ).width();
-					tabContent.forEach(function(item){
-					item.style.display = 'none';
-					});
-					tabContent[num].style.display = 'block';
-			}
-			function moveHighLight(num){
-				const newLeft = tabMenu[num].offsetLeft;
-				const newWidth = tabMenu[num].offsetWidth;
-				console.log(newWidth);
-				highLight.style.left = newLeft + 'px';
-				highLight.style.width = newWidth + 'px';
-			}
-
-
-	}
-
+  // 데스크탑 사이즈 확인
+  let desktop = window.matchMedia("(min-width: 1025px)");
+  // 데스크탑 사이즈 에서 변화 발생할 때 체크
+  desktop.addEventListener("change", function () {
+    console.log(tabContent);
+    if (desktop.matches == true) {
+      tabContent.forEach(function (item, idx) {
+        item.style.display = "block";
+      });
+    } else {
+      tabContent.forEach(function (item, idx) {
+        item.style.display = "none";
+      });
+      // 일단, 기본 화면 설정하고
+      (function lists_init() {
+        tabContent[0].style.display = "block";
+        tabText.forEach(function (item, idx) {
+          item.classList.remove("tab-active");
+        });
+        tabText[0].classList.add("tab-active");
+        tabBar.style.left = tabMenu[0].offsetLeft;
+        +"px";
+      })();
+      // 탭 버튼 클릭시
+      tabMenu.forEach(function (item, idx) {
+        item.addEventListener("click", function () {
+          if (idx == cnt_num) return;
+          cnt_num = idx;
+          showContent(cnt_num);
+          moveTabBar(cnt_num);
+          $(this).siblings().find("span").removeClass("tab-active");
+          $(this).find("span").addClass("tab-active");
+        });
+      });
+      // 클릭된 탭 인덱스 받아와서 동일한 인덱스 이미지 보여주기
+      function showContent(num) {
+        tabContent.forEach(function (item, idx) {
+          item.style.display = "none";
+        });
+        tabContent[num].style.display = "block";
+      }
+      // 탭버튼 offsetLeft 값 만큼 바 이동
+      function moveTabBar(num) {
+        const newLeft = tabMenu[num].offsetLeft;
+        tabBar.style.left = newLeft + "px";
+      }
+    }
+  });
 });
-
-/*$(document).ready(function(){
-
-
-
-		
-});
-
-$(document).ready(function(){
-
-
-
-*/
